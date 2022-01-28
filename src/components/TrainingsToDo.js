@@ -9,6 +9,9 @@ import ToDoCard from "./cards/ToDoCard";
 
 import Carousel, { consts } from "react-elastic-carousel";
 
+import decoration from "../images/decorations/10.png"
+import decoration1 from "../images/decorations/02.png"
+
 const TrainingsToDo = () => {
     const carousel = useRef(null);
 
@@ -49,6 +52,17 @@ const TrainingsToDo = () => {
     return (
         <div className="TrainingsToDo">
             <div className="to-do-container container padding">
+                <img
+                    src={decoration}
+                    alt="Decoration"
+                    className="to-do-decoration"
+                />
+                <img
+                    src={decoration1}
+                    alt="Decoration"
+                    className="to-do-decoration-1"
+                />
+
                 <div className="to-do-information">
                     <h1>
                         <span>ENTRENAMIENTOS</span>

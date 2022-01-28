@@ -1,13 +1,11 @@
+import image1 from "../images/results/Ellipse 230 (Mask).png";
+import image from "../images/results/Ellipse 231.png";
+import image2 from "../images/results/Rectangle 419.png";
+import image3 from "../images/results/Rectangle 420.png";
 
-import image from "../images/icon-play.png"
-import image1 from "../images/icon-play_1.png"
-import image2 from "../images/icon-play_2.png"
-
-import oscar from "../images/avatars/Avatar1.png"
-import ricardo from "../images/avatars/Avatar2.png"
-import richard from "../images/avatars/Avatar.png"
-
-
+import oscar from "../images/avatars/Avatar1.png";
+import ricardo from "../images/avatars/Avatar2.png";
+import richard from "../images/avatars/Avatar.png";
 
 const teachers = [
     {
@@ -33,7 +31,7 @@ const teachers = [
     },
     {
         position: 3,
-        image: image1,
+        image: image3,
         avatar: ricardo,
         name: "María Moreno",
         course: "Personaje en Maya + Substance Painter",

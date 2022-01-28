@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 
 import { openVideo } from "../../features/video";
 
-const Feature = ({ image, name, title, course, url }) => {
+const Feature = ({ image, name, country, modality, camp, video }) => {
 
     const dispatch = useDispatch();
 
@@ -14,13 +14,19 @@ const Feature = ({ image, name, title, course, url }) => {
         <div className="Feature">
             <div
                 className="feature-header"
-                style={{ backgroundImage: ` url(${image})` }}
             >
+                <img src={image} alt="Feature Result" className="feature-image"/>
                 <button
                     className="feature-video"
                     onClick={() => {
                         // handleOpenModal(true);
-                        dispatch(openVideo({ modal: true, url: url, type:"common" }));
+                        dispatch(
+                            openVideo({
+                                modal: true,
+                                url: video,
+                                type: "common",
+                            })
+                        );
                     }}
                 >
                     <IoPlay />
@@ -30,8 +36,9 @@ const Feature = ({ image, name, title, course, url }) => {
                 <div className="feature-owner">
                     <span className="feature-name">{name}</span>
                 </div>
-                <h3>{title}</h3>
-                <h5>{course}</h5>
+                <h3>{country}</h3>
+                <h5>{modality}</h5>
+                <h5>{camp}</h5>
             </div>
         </div>
     );

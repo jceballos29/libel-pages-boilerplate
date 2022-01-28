@@ -18,10 +18,11 @@ const FeaturedResults = () => {
         <Feature
             key={f}
             image={feature.image}
+            video={feature.video}
             name={feature.name}
-            title={feature.title}
-            course={feature.course}
-            url={feature.video}
+            country={feature.country}
+            modality={feature.modality}
+            camp={feature.camp}
         />
     ));
 
@@ -63,7 +64,7 @@ const FeaturedResults = () => {
                             <span>RESULTADOS</span>
                             <img src={line} alt="underline" />
                         </h1>
-                        <a href="/#">
+                        <a href="/https://www.youtube.com/watch?v=L_49m_pSwE8&list=PLK9UG5le_PO-0BOFa1CysBEcR2yVNgwZd&ab_channel=LIBELACADEMY">
                             VER MÁS{" "}
                             <IoChevronForward style={{ marginLeft: "10px" }} />
                         </a>

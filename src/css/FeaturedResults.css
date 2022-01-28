@@ -108,6 +108,13 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6) inset;
 }
 
+.FeaturedResults .rec-item-wrapper {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .FeaturedResults .rec-slider-container {
         margin: 0px;
     }

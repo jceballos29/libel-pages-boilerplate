@@ -1,138 +1,170 @@
-import nicolasZBrush from "../images/results/nicolas_zbrush.jpg";
-import joseEmanuel3DCamp from "../images/results/jose_emanuel_3d_camp.jpg";
-import joseManuelBlender from "../images/results/jose_manuel_blender.jpg";
-import alessioRossiBlender from "../images/results/alessio_rossi_blender.jpg";
-import miguelPachecoBlender from "../images/results/miguel_pacheco_blender.jpg";
-import deissyCastilloBlender from "../images/results/deissy_castillo_blender.jpg";
-import juanDadomoZBrush from "../images/results/juan_dadomo_zbrush.jpg";
-import matiasMiloroZBrush from "../images/results/matias_miloro_zbrush.jpg";
-import reto3DZBrush from "../images/results/reto_3d_zbrush.jpg";
-import jorgeBenitezBlender from "../images/results/jorge_benitez_blender.jpg";
-import nicolasGonzalesPersonajesAAA from "../images/results/nicolas_gonzales_persnajesAAA.jpg";
-import danielaCortezBlender from "../images/results/daniela_cortez_blender.jpg";
-import bairnCastilloReto3D from "../images/results/bairon_castillo_reto_3d.jpg";
-import carlosAcevedo3dCamp from "../images/results/carlos_acevedo_3d_camp.jpg";
-import nicolasUrbanoZBrush from "../images/results/nicolas_urbano_zbrush.jpg";
-import allanMoralesZBrush from "../images/results/alan_morales_zbrush.jpg";
+import sebastianLopez from "../images/results/sebastianLopez.png"
+import gustavoMejia from "../images/results/gustavoMejia.jpg"
+import byronGutierrez from "../images/results/byronGutierrez.jpg"
+import deisyCastillo from "../images/results/deissyCastillo.jpg"
+import jairLeon from "../images/results/jairLeon.png"
+import americaBecerril from "../images/results/americaBecerril.png"
+import saulDuran from "../images/results/saulDuran.jpg"
+import daniloMesa from "../images/results/daniloMesa.png"
+import katherineBerrocal from "../images/results/katherineBerrocal.jpg"
+import fernandoMontes from "../images/results/fernandoMontes.png"
+import saabhFuentes from "../images/results/saabhFuentes.jpg"
+import yoelMamani from "../images/results/yoelMamani.jpg"
+import jenuferMelo from "../images/results/jenyferRodriguez.jpg"
+import yoelMamaniZB from "../images/results/yoelMamaniZB.jpg"
+import lauraPiragauta from "../images/results/lauraPiragauta.jpg"
+import richardJack from "../images/results/richardJack.jpg"
+import carlosAcevedo from "../images/results/carlosAcevedo.jpg"
 
 const features = [
     {
-        image: nicolasZBrush,
-        name: "Nicolas",
-        course: "Reto ZBrush",
-        title: "Hardsurface Girl",
-        video: "https://youtu.be/L_49m_pSwE8",
-    },
-    {
-        image: joseEmanuel3DCamp,
-        name: "Jose Emanuel",
-        course: "3D Camp",
-        title: "Space Bear",
-        video: "https://youtu.be/d93KEZs8Ewg",
-    },
-    {
-        image: joseManuelBlender,
-        name: "Jose Manuel",
-        course: "Blender - ZBrush - Substance",
-        title: "Pilot Gorilla",
-        video: "https://youtu.be/flEz66qXrcs",
-    },
-    {
-        image: alessioRossiBlender,
-        name: "Alessio Rossi",
-        course: "Blender",
-        title: "Pandorosso",
-        video: "https://youtu.be/47VjKsfjmtk",
-    },
-
-    {
-        image: miguelPachecoBlender,
-        name: "Miguel Pacheco",
-        course: "Blender",
-        title: "Stylized Scenery",
-        video: "https://youtu.be/Qv9FGcObJgs",
-    },
-    {
-        image: deissyCastilloBlender,
-        name: "Deissy Castillo",
-        course: "Blender",
-        title: "Batman Lego",
-        video: "https://youtu.be/Eivej6HMYG8",
-    },
-    {
-        image: juanDadomoZBrush,
-        name: "Juan Dadomo",
-        course: "ZBrush",
-        title: "Cyberpunk",
-        video: "https://youtu.be/ZfEeKuHlnSA",
-    },
-
-    {
-        image: matiasMiloroZBrush,
-        name: "Matias Miloro",
-        course: "ZBrush",
-        title: "Stylized Cyberpunk",
-        video: "https://youtu.be/oGpWs_-fFpc",
-    },
-
-    {
-        image: reto3DZBrush,
-        name: "Nicolás González",
-        course: "Curso - Reto 3D",
-        title: "Anime Hardsurface",
-        video: "https://youtu.be/ReG_nOPJZos",
-    },
-    {
-        image: jorgeBenitezBlender,
-        name: "Jorge Benítez",
-        course: "Master en Blender",
-        title: "Vehículos - Armas",
-        video: "https://youtu.be/jJf9lpZfd_M",
-    },
-
-    {
-        image: nicolasGonzalesPersonajesAAA,
-        name: "Nicolás González",
-        course: "Personajes AAA - ZBrush",
-        title: "Sarah",
-        video: "https://youtu.be/483JjPo2mq0",
-    },
-    {
-        image: danielaCortezBlender,
-        name: "Daniela Cortés",
-        course: "Blender",
-        title: "Evil Cook",
-        video: "https://youtu.be/xNn_aBoYgU0",
-    },
-
-    {
-        image: bairnCastilloReto3D,
-        name: "Bairon Castillo",
-        course: "Curso - Reto 3D",
-        title: "Mecha Girl",
-        video: "https://youtu.be/XdBDgbNByVo",
-    },
-    {
-        image: carlosAcevedo3dCamp,
+        video: "https://www.youtube.com/watch?v=d0MyVfez1tw&list=PLK9UG5le_PO-0BOFa1CysBEcR2yVNgwZd&index=14&ab_channel=LIBELACADEMY",
+        image: carlosAcevedo,
         name: "Carlos Acevedo",
-        course: "3D Camp",
-        title: "Demon Girl",
-        video: "https://youtu.be/d0MyVfez1tw",
+        country: "Colombia",
+        modality: "Blender Evolution",
+        camp: "3D CAMP 2021-II",
     },
 
     {
-        image: nicolasUrbanoZBrush,
-        name: "Nicolás Urbano",
-        course: "ZBrush",
-        title: "Umbra",
-        video: "https://youtu.be/UbWX_cMZolM",
+        video: "https://youtu.be/9xzwNgIK1_M",
+        image: richardJack,
+        name: "Richard Jack",
+        country: "Bolivia",
+        modality: "Blender Evolution",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/9Of7O2n4LH8",
+        image: lauraPiragauta,
+        name: "Laura Piragauta",
+        country: "Colombia",
+        modality: "Rigging Evolution",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/m_XM_7pTRuc",
+        image: yoelMamaniZB,
+        name: "Yoel Mamani",
+        country: "Perú",
+        modality: "ZBrush Junior",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/FDFee6VAi3c",
+        image: jenuferMelo,
+        name: "Jenyfer Melo",
+        country: "México",
+        modality: "Blender Junior",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/4QbhwfY_zv0",
+        image: yoelMamani,
+        name: "Yoel Mamani",
+        country: "Perú",
+        modality: "Blender Junior",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/-D_GSSEfP5w",
+        image: saabhFuentes,
+        name: "Saabh Fuentes",
+        country: "Colombia",
+        modality: "ZBrush Evolution",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/6lbqC_WzR9o",
+        image: fernandoMontes,
+        name: "Fernando Montes",
+        country: "Colombia",
+        modality: "Rigging Junior",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/1flkB1_Ell8",
+        image: katherineBerrocal,
+        name: "Katherine Berrocal",
+        country: "Perú",
+        modality: "ZBrush Junior",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/ycg2wzN8NoM",
+        image: daniloMesa,
+        name: "Danilo Mesa",
+        country: "Ecuador",
+        modality: "Rigging Evolution",
+        camp: "3D CAMP 2021-II",
+    },
+
+    {
+        video: "https://youtu.be/YJnZz4nbwkw",
+        image: saulDuran,
+        name: "Saúl Duran ",
+        country: "México",
+        modality: "Blender Junior",
+        camp: "3D CAMP 2021-I",
+    },
+
+    {
+        video: "https://www.youtube.com/watch?v=8AcbeeN8ozc&list=PLK9UG5le_PO-0BOFa1CysBEcR2yVNgwZd&index=37&ab_channel=LIBELACADEMY",
+        image: americaBecerril,
+        name: "América Becerril ",
+        country: "México",
+        modality: "Rigging Junior",
+        camp: "3D CAMP 2021-I",
+    },
+
+    {
+        video: "https://youtu.be/oD7BBo8CLGA",
+        image: jairLeon,
+        name: "Jair León",
+        country: "México",
+        modality: "Rigging Evolution",
+        camp: "3D CAMP 2021-I",
+    },
+
+    {
+        video: "https://youtu.be/ogpo5ewMbmc",
+        image: deisyCastillo,
+        name: "Deissy Castillo",
+        country: "Colombia",
+        modality: "ZBrush Junior",
+        camp: "3D CAMP 2021-I",
     },
     {
-        image: allanMoralesZBrush,
-        name: "Alan Morales",
-        course: "ZBrush",
-        title: "Kyo",
-        video: "https://youtu.be/ViKFlbpNcNU",
+        video: "https://youtu.be/h1syA1Bd-cQ",
+        image: byronGutierrez,
+        name: "Byron Gutierrez",
+        country: "Ecuador",
+        modality: "ZBrush Junior",
+        camp: "3D CAMP 2021-I",
+    },
+    {
+        video: "https://youtu.be/WmH6XbY8XEE",
+        image: gustavoMejia,
+        name: "Gustavo Mejía",
+        country: "Colombia",
+        modality: "ZBrush Evolution",
+        camp: "3D CAMP 2021-I",
+    },
+    {
+        video: "https://youtu.be/1VWV6vlo8lk",
+        image: sebastianLopez,
+        name: "Sebastián López",
+        country: "Colombia",
+        modality: "Blender Evolution",
+        camp: "3D CAMP 2021-I",
     },
 ];
 

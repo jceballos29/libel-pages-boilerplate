@@ -13,12 +13,19 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 .feature-header {
+    width: 100%;
+    height: 200px;
     grid-area: feature-header;
     background-color: #ffffff;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 102% 102%;
+}
+
+.feature-image {
+    width: 100%;
+    height: 100%;
 }
 
 .feature-video {
@@ -53,6 +60,7 @@
 
 .feature-content {
     width: 100%;
+    height: 140px;
     grid-area: feature-content;
     position: relative;
     display: flex;

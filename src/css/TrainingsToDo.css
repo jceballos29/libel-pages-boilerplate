@@ -6,6 +6,7 @@
     justify-content: center;
     background-color: var(--base-1);
     color: white;
+    overflow: hidden;
 }
 
 .to-do-container {
@@ -17,6 +18,21 @@
     justify-content: center;
     padding-top: 60px;
     padding-bottom: 60px;
+    position: relative;
+}
+
+.to-do-decoration {
+    position: absolute;
+    width: 400px;
+    bottom: -10%;
+    left: -25%;
+    transform: rotate(30deg);
+}
+
+.to-do-decoration-1 {
+    position: absolute;
+    top: -35%;
+    right: -35%;
 }
 
 .to-do-information {
@@ -109,7 +125,64 @@
         margin: 0px;
     }
 
+
+@media (max-width:1440px) {
+    .to-do-decoration {
+    position: absolute;
+    width: 400px;
+    bottom: -10%;
+    left: -15%;
+    transform: rotate(30deg);
+}
+
+.to-do-decoration-1 {
+    position: absolute;
+    top: -35%;
+    right: -25%;
+}
+}
+
+@media (max-width:1280px) {
+    .to-do-decoration {
+    position: absolute;
+    width: 400px;
+    bottom: -10%;
+    left: -20%;
+    transform: rotate(30deg);
+}
+
+.to-do-decoration-1 {
+    position: absolute;
+    top: -35%;
+    right: -30%;
+}
+}
+
+@media (max-width:1024px) {
+    .to-do-decoration {
+    position: absolute;
+    width: 400px;
+    bottom: -20%;
+    left: -30%;
+    transform: rotate(30deg);
+}
+
+.to-do-decoration-1 {
+    position: absolute;
+    top: -40%;
+    right: -45%;
+}
+}
+
+
 @media (max-width: 860px) {
+        .to-do-decoration {
+    display: none;
+}
+
+.to-do-decoration-1 {
+    display: none;
+}
     .TrainingsToDo {
         height: 750px;
     }

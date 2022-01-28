@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import "../css/Memberships.css";
-import dot from "../images/logo_dot_dark.png";
+import line from "../images/underline.png";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
-import Carousel from "react-elastic-carousel";
+import Carousel, { consts } from "react-elastic-carousel";
 
 import memberships from "../utils/memberships";
 import Membership from "./cards/Membership";
@@ -14,49 +14,70 @@ const Memberships = () => {
     const carousel = useRef(null);
 
 
-    const membershipsList = memberships.map((membership, i) => (
+    const membershipsList = memberships.map((training) => (
         <Membership
-            key={i}
-            image={membership.image}
-            courses={membership.courses}
-            icon={membership.icon}
-            name={membership.name}
-            price={membership.price}
-            url={membership.url}
+            key={training.id}
+            image={training.image}
+            icon={training.icon}
+            title={training.title}
+            price={training.price}
+            price_before={training.price_before}
+            options={training.options}
+            items={training.items}
         />
     ));
 
    
+    const customArrows = ({ type, onClick, isEdge }) => {
+        const pointer =
+            type === consts.PREV ? <IoChevronBack /> : <IoChevronForward />;
+        return (
+            <button
+                onClick={onClick}
+                disabled={isEdge}
+                style={{
+                    fontSize: 36,
+                    border: "none",
+                    backgroundColor: "transparent",
+                    color: "#6000de",
+                    position: "relative",
+                }}
+            >
+                {pointer}
+            </button>
+        );
+    };
+
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
         { width: 460, itemsToShow: 2, itemsToScroll: 1 },
-        { width: 768, itemsToShow: 4, itemsToScroll: 1 },
-        { width: 1200, itemsToShow: 4, itemsToScroll: 1 },
+        { width: 768, itemsToShow: 4, itemsToScroll: 1, showArrows: false },
+        { width: 1200, itemsToShow: 4, itemsToScroll: 1, showArrows: false },
     ];
 
     return (
-        <div className="Memberships">
+        <div className="Memberships" id="entrenamientos">
             <div className="memberships-container container padding">
                 <div className="memberships-header">
-                    <div className="memberships-title">
-                        <img src={dot} alt="Libel Dot" />
-                        <h1>
-                            Nuestras
-                            <br />
-                            Membresías
-                        </h1>
-                    </div>
-                    <a href="https://cursos.libel.academy/collections">
-                        VER TODAS{" "}
-                        <IoChevronForward style={{ marginLeft: "10px" }} />
-                    </a>
+                    <h1>
+                        ELEGIR <br />
+                        <span>ENTRENAMIENTO</span>
+                        <img
+                            className="convert-underline"
+                            src={line}
+                            alt="underline"
+                        />
+                    </h1>
+                    <p>
+                        En el 3DCAMP puedes elegir 1, 2 o 3 entrenamientos. Todo depende de tu plan de aprendizaje y el tiempo que puedas invertir en cada uno de los temas.
+                    </p>
                 </div>
                 <div className="memberships-content">
                     <Carousel
                         ref={carousel}
                         breakPoints={breakPoints}
                         pagination={false}
-                        showArrows={false}
+                        renderArrow={customArrows}
                         className="memberships-carousel"
                     >
                         {membershipsList}

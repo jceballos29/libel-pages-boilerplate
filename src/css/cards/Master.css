@@ -119,6 +119,12 @@
 
 @media (max-width: 860px) {
     .Master {
-        width: 250px;
+        width: 290px;
+    }
+}
+
+@media (max-width: 460px) {
+    .Master {
+        width: 95%;
     }
 }

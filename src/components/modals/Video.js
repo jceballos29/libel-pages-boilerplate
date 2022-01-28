@@ -15,6 +15,8 @@ const Video = () => {
 
     const modal = useSelector((state) => state.video.value.modal);
     const url = useSelector((state) => state.video.value.url);
+    const type = useSelector((state) => state.video.value.type);
+    const master = useSelector((state) => state.video.value.master);
 
     const dispatch = useDispatch();
 
@@ -76,6 +78,11 @@ const Video = () => {
                         />
                     ) : null}
                 </div>
+            {type === "master" ? (
+                <a href={master} className={`go-to-master ${container}`}>
+                    IR AL MASTER
+                </a>
+            ) : null}
             </div>
         </div>
     );

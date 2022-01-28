@@ -1,0 +1,96 @@
+.TeacherChard {
+    width: 250px;
+    height: 280px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.teacher-content {
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.3fr 0.7fr;
+    align-items: center;    
+    justify-content: center;
+    padding: 5px;
+}
+
+.teacher-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+}
+
+.teacher-image img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.teacher-image-filter {
+    position: relative;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.teacher-image-filter:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 42px;
+}
+
+.teacher-title {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.teacher-info {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "teacher-avatar teacher-name";
+    width: 100%;
+    height: 80px;
+    background-color: var(--line);
+}
+.teacher-avatar {
+    grid-area: teacher-avatar;
+    align-self: center;
+    justify-self: center;
+}
+.teacher-name {
+    grid-area: teacher-name;
+    align-self: center;
+    line-height: 1.05;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.teacher-name span {
+    color: var(--base-3);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+@media (max-width:860px) {
+    .TeacherChard {
+        margin-bottom: 20px;
+    }
+}

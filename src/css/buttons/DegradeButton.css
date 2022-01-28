@@ -4,8 +4,8 @@
     border-radius: 24px;
     background: linear-gradient(
         110deg,
-        rgba(96, 0, 222, 0.8) 50%,
-        rgba(0, 255, 255, 0.6) 80%
+        rgba(96, 0, 222, 1) 30%,
+        rgba(0, 255, 255, 1) 80%
     );
     color: var(--white);
     margin: 20px 0px;
@@ -17,9 +17,20 @@
     cursor: pointer;
     text-decoration: none;
     justify-self: flex-start;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        font-weight: 700;
+
+
 }
 
-
+.DegradeButton:hover {
+    background: linear-gradient(
+        110deg,
+        rgba(96, 0, 222, 1) 0%,
+        rgba(0, 255, 255, 0.8) 0%
+        );
+        background-color: black;
+    }
 
 .create-account {
     width: 28px;
@@ -30,22 +41,11 @@
     align-items: center;
     -webkit-backdrop-filter: blur(4.5px);
     backdrop-filter: blur(4.5px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(144, 144, 255, 0.6);
     position: absolute;
     right: 10px;
 }
 
-
-.DegradeButton:hover {
-        background: linear-gradient(
-        110deg,
-        rgba(96, 0, 222, 0.8) 0%,
-        rgba(0, 255, 255, 0.6) 0%
-    );
-}
-
-
 .DegradeButton:hover .create-account {
     background-color: var(--primary-blue);
-
 }

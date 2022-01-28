@@ -21,3 +21,9 @@
         width: 300px;
     }
 }
+
+@media (max-width:460px) {
+    .SeeMoreFeatures {
+        width: 95%;
+    }
+}

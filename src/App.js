@@ -1,32 +1,37 @@
 import './App.css';
-import Benefits from './components/Benefits';
-import Convert3DPro from './components/Convert3DPro';
+import WhatWillYouLearn from './components/ WhatWillYouLearn';
+import Awards from './components/Awards';
+import Categories from './components/Categories';
 import Counseling from './components/Counseling';
-import Courses from './components/Courses';
+import DynamicAwards from './components/DynamicAwards';
 import FAQ from './components/FAQ';
 import FeaturedResults from './components/FeaturedResults';
 import Financing from './components/Financing';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Masters from './components/Masters';
+import Itinerary from './components/Itinerary';
 import Memberships from './components/Memberships';
 import Navbar from './components/Navbar';
-import ZbrushDistributor from './components/ZbrushDistributor';
+import Trailer from './components/Trailer';
+import TrainingsToDo from './components/TrainingsToDo';
+
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Header />
-      <Masters />
-      <Courses />
-      <Convert3DPro />
+      <TrainingsToDo />
+      <Trailer />
+      <Categories />
+      <Awards />
+      <DynamicAwards />
+      <Itinerary />
+      <WhatWillYouLearn />
       <Memberships />
-      <Counseling />
-      <FeaturedResults />
-      <Benefits />
-      <ZbrushDistributor />
       <Financing />
+      <FeaturedResults />
+      <Counseling />
       <FAQ />
       <Footer />
     </div>

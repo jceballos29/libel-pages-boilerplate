@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 
 import { openVideo } from "../../features/video";
 
-const Master = ({ image, title, professor, technology, url }) => {
+const Master = ({ image, title, professor, technology, url, master }) => {
 
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Master = ({ image, title, professor, technology, url }) => {
                             className="master-more"
                             onClick={() => {
                                 // handleOpenModal(true);
-                                dispatch(openVideo({ modal: true, url: url }));
+                                dispatch(openVideo({ modal: true, url: url, type:"master", master: master }));
                             }}
                         >
                             <IoAdd />

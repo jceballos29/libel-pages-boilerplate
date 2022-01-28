@@ -1,0 +1,143 @@
+.Categories {
+    width: 100%;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-1);
+    color: white;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 20px; */
+}
+
+.Categories h1 {
+    font-size: 64px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.09;
+}
+
+.categories-legend {
+    width: 38%;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.categories-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "category-emblem category-info";
+    width: 420px;
+    height: 120px;
+}
+
+.category-emblem {
+    grid-area: category-emblem;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        120deg,
+        rgba(96, 0, 222, 0.8) 30%,
+        rgba(0, 255, 255, 0.6) 80%
+    );
+}
+
+.category-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+        "category-name"
+        "category-description";
+    grid-area: category-info;
+    width: 260px;
+    height: 120px;
+}
+
+.category-name {
+    grid-area: category-name;
+    font-size: 32px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.09;
+}
+
+.category-description {
+    width: 100%;
+    grid-area: category-description;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    color: #c2d7ff;
+}
+
+@media (max-width: 1024px) {
+    .Categories {
+        height: 640px;
+    }
+
+    .categories-content {
+        flex-direction: column;
+    }
+
+    .categories-legend {
+        width: 60%;
+    }
+}
+
+@media (max-width: 460px) {
+    .Categories {
+        height: 1000px;
+    }
+
+    .category {
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .category-info {
+        text-align: center;
+    }
+
+    .Categories h1 {
+        font-size: 39px;
+    }
+
+    .categories-legend {
+        width: 90%;
+    }
+}

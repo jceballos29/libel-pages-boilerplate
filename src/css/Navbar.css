@@ -73,6 +73,18 @@
     text-align: center;
 }
 
+.nav-countdown-title a {
+    text-decoration: underline;
+}
+
+.nav-countdown-title:hover {
+    color: var(--primary-blue);
+}
+
+.nav-countdown-title:hover a {
+    color: var(--primary-blue);
+}
+
 .nav-countdown-timer {
     height: 100%;
     display: flex;

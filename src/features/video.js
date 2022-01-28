@@ -4,6 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialSateValue = {
     modal: false,
     url: "https://www.youtube.com/watch?v=U4FAH7U-_OQ",
+    type: "common",
+    master: ""
 };
 
 export const videoSlice = createSlice({

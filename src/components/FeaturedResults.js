@@ -1,22 +1,22 @@
 import React, { useRef } from "react";
 import "../css/FeaturedResults.css";
-import dot from "../images/logo_dot_dark.png";
 
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 import features from "../utils/featuredResults";
 
 import Feature from "./cards/Feature";
-import SeeMoreFeatures from "./cards/SeeMoreFeatures";
 
-import Carousel from "react-elastic-carousel";
+import Carousel, { consts } from "react-elastic-carousel";
+
+import line from "../images/line.png";
 
 const FeaturedResults = () => {
     const carousel = useRef(null);
 
-    const featuredList = features.map((feature, index) => (
+    const featuredList = features.map((feature, f) => (
         <Feature
-            key={index}
+            key={f}
             image={feature.image}
             name={feature.name}
             title={feature.title}
@@ -25,13 +25,31 @@ const FeaturedResults = () => {
         />
     ));
 
-    featuredList.push(<SeeMoreFeatures />);
+    const customArrows = ({ type, onClick, isEdge }) => {
+        const pointer =
+            type === consts.PREV ? <IoChevronBack /> : <IoChevronForward />;
+        return (
+            <button
+                onClick={onClick}
+                disabled={isEdge}
+                style={{
+                    fontSize: 36,
+                    border: "none",
+                    backgroundColor: "transparent",
+                    color: "#6000de",
+                    position: "relative",
+                }}
+            >
+                {pointer}
+            </button>
+        );
+    };
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
         { width: 460, itemsToShow: 2, itemsToScroll: 1 },
-        { width: 768, itemsToShow: 3, itemsToScroll: 1 },
-        { width: 1200, itemsToShow: 3, itemsToScroll: 1 },
+        { width: 768, itemsToShow: 3, itemsToScroll: 1, showArrows: false },
+        { width: 1200, itemsToShow: 3, itemsToScroll: 1, showArrows: false },
     ];
 
     return (
@@ -39,12 +57,16 @@ const FeaturedResults = () => {
             <div className="results-container container padding">
                 <div className="results-header">
                     <div className="results-title">
-                        <img src={dot} alt="Libel Dot" />
                         <h1>
-                            Resultados de
+                            IMPRESIONANTES
                             <br />
-                            Estudiantes
+                            <span>RESULTADOS</span>
+                            <img src={line} alt="underline" />
                         </h1>
+                        <a href="/#">
+                            VER MÁS{" "}
+                            <IoChevronForward style={{ marginLeft: "10px" }} />
+                        </a>
                     </div>
                 </div>
                 <div className="results-content">
@@ -52,7 +74,7 @@ const FeaturedResults = () => {
                         ref={carousel}
                         breakPoints={breakPoints}
                         pagination={false}
-                        showArrows={false}
+                        renderArrow={customArrows}
                         className="results-carousel"
                     >
                         {featuredList}

@@ -2,18 +2,15 @@ import React from "react";
 import "../../css/cards/Course.css";
 
 import { IoCaretForwardOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+
+import { openVideo } from "../../features/video";
+
+const Course = ({image, avatar, software, title, price, info, start, url, video }) => {
+
+    const dispatch = useDispatch();
 
 
-const Course = ({
-    image,
-    avatar,
-    software,
-    title,
-    price,
-    info,
-    start,
-    url = "https://cursos.libel.academy/collections?category=courses",
-}) => {
     return (
         <div className="Course">
             <div
@@ -22,7 +19,15 @@ const Course = ({
                     backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.6839110644257703) 30%, rgba(255,255,255,0) 80%), url(${image})`,
                 }}
             >
-                <button className="course-play">
+                <button
+                    className="course-play"
+                    onClick={() => {
+                        // handleOpenModal(true);
+                        dispatch(
+                            openVideo({ modal: true, url: video, type: "common" })
+                        );
+                    }}
+                >
                     <IoCaretForwardOutline style={{ marginLeft: 2 }} />
                 </button>
                 <a href={url} className="course-start-now">
@@ -35,7 +40,7 @@ const Course = ({
                     <img src={avatar} alt="teacher" />
                 </div>
                 <div className="course-information-price">
-                    <span className="price">${price}<sup>USD</sup></span>
+                    <span className="price">${price} USD</span>
                     <div className="line"></div>
                 </div>
                 <div className="course-information-text">

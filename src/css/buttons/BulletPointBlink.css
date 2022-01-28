@@ -1,0 +1,41 @@
+.BulletPointBlink {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullet-flash {
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: blink 5s ease-in 0s infinite normal forwards;
+    position: absolute;
+
+}
+
+.bullet-center {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    animation: none;
+    position: absolute;
+    z-index: 10;
+}
+
+@keyframes blink {
+0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}

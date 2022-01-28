@@ -1,171 +1,106 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Header.css";
-import Tags from "./buttons/Tags";
 
-import line from "../images/line.png";
-import { IoArrowBack, IoArrowForward, IoChevronForward } from "react-icons/io5";
+import DegradeButton from "./buttons/DegradeButton";
 
-import { Link } from "react-scroll";
+import logo3dCamp from "../images/3d-camp-logo.png";
+import BulletPointBlink from "./buttons/BulletPointBlink";
 
-import Carousel, { consts } from "react-elastic-carousel";
+import dayjs from "dayjs";
 
-import headerBanner1 from "../images/header-banner-1.png";
-import headerBanner2 from "../images/header-banner-2.png";
+import { getRemainingTimeUntilMsTimestamp } from "../utils/countdown";
 
-import decorationLeft from "../images/decorations/04.png";
-import PreviousButton from "./buttons/PreviousButton";
-import NextButton from "./buttons/NextButton";
+const defaultRemainingTime = {
+    seconds: "00",
+    minutes: "00",
+    hours: "00",
+    days: "00",
+};
 
 const Header = () => {
-    const [banner, setBanner] = useState(0);
+    const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
+    const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
 
-    const banners = [
-        <img src={headerBanner1} alt="Header Banner 1" />,
-        <img src={headerBanner2} alt="Header Banner 2" />,
-    ];
+    const nowDay = dayjs();
+    const openingDay = dayjs("Sat, 19 Mar 2022 16:00:00 GMT-5");
 
-    const nextBanner = () => {
-        setBanner(banner === banners.length - 1 ? 0 : banner + 1);
-    };
 
-    const previousBanner = () => {
-        setBanner(banner === 0 ? banners.length - 1 : banner - 1);
-    };
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            updateRemainingTime(countdownTimestampMs);
+        }, 1000);
+        return () => clearInterval(intervalId);
+    }, [countdownTimestampMs]);
 
-    const tagsList = [
-        <Tags
-            tag={"LICENCIA ZBRUSH"}
-            url="https://libel.academy/zbrush/"
-            width={215}
-        />,
-        <Tags
-            tag={"ESCUELA BLENDER"}
-            url="https://aprende-blender.libel.academy/"
-            width={215}
-        />,
-        <Tags
-            tag={"ESCUELA ZBRUSH"}
-            url="https://libel.academy/zbrush/"
-            width={215}
-        />,
-        <Tags
-            tag={"3D CAMP"}
-            url="https://libel.academy/zbrush/"
-            width={150}
-        />,
-    ];
-
-    const breakPoints = [
-        { width: 1, itemsToShow: 1 },
-        { width: 460, itemsToShow: 2, itemsToScroll: 1 },
-        { width: 768, itemsToShow: 4, showArrows: false },
-        { width: 1200, itemsToShow: 4, showArrows: false },
-    ];
-
-    const customArrows = ({ type, onClick, isEdge })=> {
-        const pointer = type === consts.PREV ? <PreviousButton/> : <NextButton/>
-        return (
-            <div onClick={onClick} disabled={isEdge}>
-                {pointer}
-            </div>
-        )
+    function updateRemainingTime(countdown) {
+        setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
     }
 
-
-        
     return (
         <div className="Header">
             <div className="header-container container padding">
-                <img
-                    src={decorationLeft}
-                    className="header-decoration"
-                    alt="Header Decoration"
-                />
                 <div className="header-content">
-                    <div className="header-slider-control">
-                        <IoArrowBack
-                            className="header-button"
-                            onClick={() => {
-                                previousBanner();
-                            }}
-                        />
-                        <div className="header-slider-nav">
-                            <button
-                                className={
-                                    banner === 0
-                                        ? "header-slider-dot-active"
-                                        : "header-slider-dot"
-                                }
-                                onClick={() => {
-                                    setBanner(0);
-                                }}
-                            ></button>
-                            <button
-                                className={
-                                    banner === 1
-                                        ? "header-slider-dot-active"
-                                        : "header-slider-dot"
-                                }
-                                onClick={() => {
-                                    setBanner(1);
-                                }}
-                            ></button>
-                        </div>
-                        <IoArrowForward
-                            className="header-button"
-                            onClick={() => {
-                                nextBanner();
-                            }}
+                    <img src={logo3dCamp} alt="3D CAMP" className="logo-3d-camp" />
+                    <h1>
+                        ÚNETE A<br />
+                        NUESTRO <span>CAMPAMENTO</span> 3D
+                    </h1>
+                    <div className="header-content-info">
+                        <p>online en vivo</p>
+                        <DegradeButton
+                            width={210}
+                            name="INSCRIBIRME"
+                            paddingLeft={40}
+                            link={true}
                         />
                     </div>
-                    <h1 className="header-title">
-                        <span>
-                            Academia
-                            <br />
-                            online
-                        </span>{" "}
-                        aprende 3d desde cero
-                        <img
-                            src={line}
-                            alt="header-underline"
-                            className="header-underline"
-                        />
-                    </h1>
-                    <p className="header-paragraph">
-                        Aprende a tu ritmo o con clases en vivo y logra{" "}
-                        <span>resultados increíbles.</span>
-                    </p>
-                    <Link
-                        to="results"
-                        hashSpy={true}
-                        spy={true}
-                        smooth={true}
-                        duration={700}
-                        offset={-80}
-                        className="see-results"
-                    >
-                        VER RESULTADOS
-                        <span className="see-results-circle">
-                            <IoChevronForward />
-                        </span>
-                    </Link>
-                </div>
-                <div
-                    className="header-image"
-                    onClick={() => {
-                        nextBanner();
-                    }}
-                >
-                    {banners[banner]}
                 </div>
             </div>
-            <div className="headers-tags">
-                <div className="header-tags-container container padding">
+            <div className="header-information">
+                <div className="header-information-container container padding">
+                    {!openingDay.isBefore(nowDay) ? (
+                        <div className="countdown">
+                                <div className="countdown-segment">
+                                    <div className="countdown-label">DIA</div>
+                                    <div className="countdown-number">
+                                        {remainingTime.days}
+                                    </div>
+                                </div>
+                                <div className="countdown-segment">
+                                    <div className="countdown-label">HOR</div>
+                                    <div className="countdown-number">
+                                        {remainingTime.hours}
+                                    </div>
+                                </div>
+                                <div className="countdown-segment">
+                                    <div className="countdown-label">MIN</div>
+                                    <div className="countdown-number">
+                                        {remainingTime.minutes}
+                                    </div>
+                                </div>
+                                <div className="countdown-segment">
+                                    <div className="countdown-label">SEG</div>
+                                    <div className="countdown-number">
+                                        {remainingTime.seconds}
+                                    </div>
+                                </div>
+                            </div>
+                    ) : (
+                        <div className="started-camp">
+                            <BulletPointBlink color={"#77bf41"} />
+                            Ya inició
+                        </div>
+                    )}
 
-                    <Carousel breakPoints={breakPoints} pagination={false} renderArrow={customArrows}>
-                        {tagsList}
-                    </Carousel>
-                    
+                    {/*  */}
+                    <div className="camp-schedule">
+                        <div className="schedule-days">
+                            <span>45</span>DÍAS
+                        </div>
+                        <div className="schedule-legend">
+                            entrenamiento intensivo
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

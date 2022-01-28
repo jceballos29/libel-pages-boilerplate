@@ -40,7 +40,9 @@ const Navbar = () => {
     const [top, setTop] = useState("-100%");
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
-    const countdownTimestampMs = 1644696000000;
+    // const countdownTimestampMs = 1644696000000;
+    const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
+
 
     useEffect(() => {
         if (menu) {
@@ -83,17 +85,23 @@ const Navbar = () => {
         <div className="Navbar">
             <div className="navbar-container container">
                 <div className="home">
-                    <a className="logo" href="/">
+                    <a className="logo" href="https://libel.academy">
                         <img src={logo} alt="Libel Academy" />
                     </a>
                 </div>
                 <div className="navigation">
                     <div className="nav-countdown">
-                        <a href="https://libel.academy/3d-camp" className="nav-countdown-image">
+                        <a
+                            href="https://libel.academy/3d-camp"
+                            className="nav-countdown-image"
+                        >
                             <img src={lo3dCamp} alt="3D Camp" />
                         </a>
                         <div className="nav-countdown-title">
-                            3D CAMP <br /> ONLINE - EN VIVO
+                            3D CAMP <br />{" "}
+                            <a href="https://libel.academy/3d-camp">
+                                ONLINE - EN VIVO
+                            </a>
                         </div>
                         <div className="nav-countdown-timer">
                             <div className="nav-countdown-segment">

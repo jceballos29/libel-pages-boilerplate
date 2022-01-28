@@ -127,3 +127,10 @@ textarea::-webkit-scrollbar-track:active {
 
   }
 }
+
+@media (max-width:460px) {
+  .padding {
+    padding: 0px 10px;
+
+  }
+}

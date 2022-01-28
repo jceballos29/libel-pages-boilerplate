@@ -8,10 +8,16 @@ import Video from "./components/modals/Video";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import videoReducer from "./features/video";
+import awardReducer from "./features/award"
+import trainingReducer from "./features/training"
+import Award from "./components/modals/Award";
+import Training from "./components/modals/Training";
 
 const store = configureStore({
     reducer: {
         video: videoReducer,
+        award: awardReducer,
+        training: trainingReducer
     },
 });
 
@@ -20,6 +26,8 @@ ReactDOM.render(
         <Provider store={store}>
             <App />
             <Video />
+            <Award />
+            <Training />
         </Provider>
     </React.StrictMode>,
     document.getElementById("root")

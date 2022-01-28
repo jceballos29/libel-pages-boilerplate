@@ -1,28 +1,38 @@
 .Tags {
+    width: auto;
     height: 48px;
     border-radius: 24px;
     -webkit-backdrop-filter: blur(25.8px);
-  backdrop-filter: blur(25.8px);
-      background-color: rgba(255, 255, 255, 0.2);
-
-  position: relative;
-  color: white;
-  font-weight: 500;
-  font-size: 16px;
-  padding-left: 24px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-
-  cursor: pointer;
-  border: none;
-  text-transform: uppercase;
-  align-self: center;
+    backdrop-filter: blur(25.8px);
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 0 10px 0 15px;
+    margin: 0 10px;
 }
 
 .Tags a {
     color: white;
+}
+
+.tag-name {
+    margin-left: 14px;
+    margin-right: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
 }
 
 .tags-circle {
@@ -30,26 +40,37 @@
     height: 28px;
     border-radius: 14px;
     -webkit-backdrop-filter: blur(4.5px);
-  backdrop-filter: blur(4.5px);
-  background-color: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  right: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: white !important;
-
+    backdrop-filter: blur(4.5px);
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white !important;
 }
+
 
 .Tags:hover {
   background-color: #6000de70;
 }
 
-.Tags:hover .tags-circle{
-  background-color: var(--primary-blue);
+
+.Tags:hover .tags-circle {
+    background-color: rgba(96, 0, 222, 1);
 }
 
 .tag-active {
-  background-color: var(--primary-blue);
+    background-color: rgba(96, 0, 222, 0.5);
+}
+
+@media (max-width: 860px) {
+    .Tags {
+        margin: 0px 5px;
+    }
+}
+
+@media (max-width: 460px) {
+    .Tags {
+        margin: 10px 0px;
+    }
 }

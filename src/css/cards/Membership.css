@@ -1,11 +1,13 @@
 .Membership {
     width: 270px;
-    height: 340px;
+    height: 550px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1000;
 }
 
 .membership-header {
@@ -22,24 +24,19 @@
 }
 
 .membership-body {
+    padding: 20px 25px;
     width: 100%;
-    height: 270px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0px 0px;
-    grid-template-areas:
-        "membership-info"
-        "membership-course"
-        "membership-button";
-    padding: 20px;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .membership-info {
     grid-area: membership-info;
-    border-bottom: 1px solid rgba(143, 143, 143, 0.4);
     display: grid;
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas: "membership-icon membership-name";
@@ -47,12 +44,10 @@
 
 .membership-icon {
     grid-area: membership-icon;
-    justify-self: center;
-    align-self: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #6000de;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,6 +58,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+        padding-left: 10px;
 }
 
 .membership-name h4 {
@@ -77,37 +73,73 @@
     font-weight: 500;
 }
 
-.membership-course {
-    grid-area: membership-course;
-    text-align: left;
+.membership-name h5 > sup  {
+    text-decoration: line-through;
+    color: var(--base-3);
+    margin-left: 3px;
+    font-size: 8px;
+}
+
+.membership-card-option {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+    height: 60px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    padding-left: 20px;
 }
 
-.membership-course p {
-    font-size: 20px;
-    color: #000000;
-    font-weight: 500;
-}
-
-.membership-course p span {
+.membership-card-option select {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-family: 'Poppins';
     font-size: 14px;
-    color: #8f8f8f;
-    font-weight: 700;
+    outline: none;
+}
+
+.membership-card-option option {
+    font-size: 12px;
+}
+
+.membership-card-option p {
+    font-size: 14px;
+}
+
+.membership-card-items {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    color: var(--base-3);
+    font-size: 16px;
+}
+
+.membership-card-items li {
+    width: 100%;
+    list-style: square inside;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 .membership-button {
     grid-area: membership-button;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: center;
+    gap: 10px;
 }
 
-.membership-button a {
+.membership-button .paypal {
     text-decoration: none;
-    color: #000000;
+    color: var(--base-3);
     border: 1px solid rgba(143, 143, 143, 0.6);
     width: 200px;
     height: 50px;
@@ -117,11 +149,39 @@
     align-items: center;
 }
 
-.membership-button a:hover {
+.membership-button .paypal:hover {
     color: #ffffff;
     background-color: rgba(143, 143, 143, 0.6);
 }
 
+.membership-button .card {
+    text-decoration: none;
+    color: white;
+    border: 1px solid var(--base-3);
+    background-color: var(--base-3);
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.membership-button .card:hover {
+    color: white;
+    background-color: rgba(143, 143, 143, 0.6);
+    
+}
+
+.question-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+.question-icon:hover {
+    color: var(--primary-blue);
+}
 
 @media (max-width:1024px) {
     .Membership {
@@ -134,5 +194,19 @@
 @media (max-width: 860px) {
     .Membership {
         width: 230px;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .Membership {
+        width: 95%;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .membership-body {
+        padding: 20px 5px;
     }
 }

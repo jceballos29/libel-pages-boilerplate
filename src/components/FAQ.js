@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/FAQ.css";
 
 import questions from "../utils/questions";
@@ -10,9 +10,10 @@ import { IoChevronForward } from "react-icons/io5";
 
 const FAQ = () => {
 
+    const [question, setQuestion] = useState();
     const handleQuestion = (id) => {
-        console.log(questions[id]);
-    };
+        setQuestion(id)
+    }
 
     return (
         <div className="FAQ">
@@ -30,30 +31,58 @@ const FAQ = () => {
                     <div className="faq-questions">
                         <div className="faq-questions-container">
                             <Question
-                                id={questions[0].id}
-                                question={questions[0].question}
-                                answer={questions[0].answer}
+                                id={questions[11].id}
+                                question={questions[11].question}
+                                answer={questions[11].answer}
                                 handleQuestion={handleQuestion}
+                                active={
+                                    question === questions[11].id ? true : false
+                                }
                             />
                             <Question
-                                id={questions[1].id}
-                                question={questions[1].question}
-                                answer={questions[1].answer}
+                                id={questions[10].id}
+                                question={questions[10].question}
+                                answer={questions[10].answer}
                                 handleQuestion={handleQuestion}
+                                active={
+                                    question === questions[10].id ? true : false
+                                }
                             />
                             <Question
-                                id={questions[2].id}
-                                question={questions[2].question}
-                                answer={questions[2].answer}
+                                id={questions[4].id}
+                                question={questions[4].question}
+                                answer={questions[4].answer}
                                 handleQuestion={handleQuestion}
+                                active={
+                                    question === questions[4].id ? true : false
+                                }
                             />
                             <Question
-                                id={questions[3].id}
-                                question={questions[3].question}
-                                answer={questions[3].answer}
+                                id={questions[8].id}
+                                question={questions[8].question}
+                                answer={questions[8].answer}
                                 handleQuestion={handleQuestion}
+                                active={
+                                    question === questions[8].id ? true : false
+                                }
                             />
-                            <a href={"https://libel.academy/preguntas-frecuentes"} className="more-questions">VER MAS PREGUNTAS{" "}<IoChevronForward/></a>
+                            <Question
+                                id={questions[9].id}
+                                question={questions[9].question}
+                                answer={questions[9].answer}
+                                handleQuestion={handleQuestion}
+                                active={
+                                    question === questions[9].id ? true : false
+                                }
+                            />
+                            <a
+                                href={
+                                    "https://libel.academy/3d-camp/preguntas-frecuentes"
+                                }
+                                className="more-questions"
+                            >
+                                VER MAS PREGUNTAS <IoChevronForward />
+                            </a>
                         </div>
                         <a
                             href="https://calendly.com/libel"

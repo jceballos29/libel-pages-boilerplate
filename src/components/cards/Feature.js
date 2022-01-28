@@ -20,7 +20,7 @@ const Feature = ({ image, name, title, course, url }) => {
                     className="feature-video"
                     onClick={() => {
                         // handleOpenModal(true);
-                        dispatch(openVideo({ modal: true, url: url }));
+                        dispatch(openVideo({ modal: true, url: url, type:"common" }));
                     }}
                 >
                     <IoPlay />

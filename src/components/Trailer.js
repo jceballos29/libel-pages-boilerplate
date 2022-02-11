@@ -10,7 +10,7 @@ import { openVideo } from "../features/video"
 const Trailer = () => {
 
     const dispatch = useDispatch()
-    const url = "https://www.youtube.com/watch?v=GqowtpD6aEQ";
+    const url = "";
 
     return (
         <section

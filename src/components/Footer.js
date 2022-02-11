@@ -36,7 +36,7 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://libel.academy/libel/master/">
+                                <a href="https://libel.academy/master/">
                                     Masters
                                 </a>
                             </li>

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 
-import { IoCaretDown, IoCaretUp, IoMenu } from "react-icons/io5";
+import {
+    IoArrowBack,
+    IoCaretDown,
+    IoCaretUp,
+    IoChevronForward,
+    IoMenu,
+} from "react-icons/io5";
 
 import logo from "../images/logo.png";
-import lo3dCamp from "../images/blender.png"
+import lo3dCamp from "../images/3d-camp-logo.png";
 
 import bulletPoint1 from "../images/courses-list/002-gantt chart.png";
 import bulletPoint2 from "../images/courses-list/021-mail.png";
@@ -18,6 +24,8 @@ import coursesPreviewList from "../utils/previewCourses";
 import SlideShow from "./sliders/SlideShow";
 
 import { getRemainingTimeUntilMsTimestamp } from "../utils/countdown";
+import { useDispatch, useSelector } from "react-redux";
+import { closeSideMenu, showSideMenu } from "../features/menu";
 
 const defaultRemainingTime = {
     seconds: "00",
@@ -26,11 +34,103 @@ const defaultRemainingTime = {
     days: "00",
 };
 
+const coursesDetail = {
+    title: "Cursos",
+    content: [
+        {
+            id: 0,
+            name: "Todos los cursos",
+            url: "https://cursos.libel.academy/",
+        },
+        {
+            id: 1,
+            name: "Curso de Rigging",
+            url: "https://cursos.libel.academy/collections?q=Rigging",
+        },
+        {
+            id: 2,
+            name: "Curso de Blender",
+            url: "https://aprende-blender.libel.academy/",
+        },
+        {
+            id: 3,
+            name: "Curso de ZBrush",
+            url: "https://cursos.libel.academy/bundles/membresia-plus-escuela-zbrush",
+        },
+        {
+            id: 4,
+            name: "Curso de Ilustración",
+            url: "https://cursos.libel.academy/collections?q=concep",
+        },
+    ],
+};
 
+const mastersDetails = {
+    title: "Masters",
+    content: [
+        {
+            id: 0,
+            name: "Todos los masters",
+            url: "https://libel.academy/master",
+        },
+        {
+            id: 1,
+            name: "Blender para Videojuegos",
+            url: "https://libel.academy/master-blender",
+        },
+        {
+            id: 2,
+            name: "Personajes para Videojuegos AAA",
+            url: "https://libel.academy/master-personajes-para-videojuegos/",
+        },
+        {
+            id: 3,
+            name: "Escultura para Impresión",
+            url: "https://libel.academy/master-escultura-para-impresion/",
+        },
+        {
+            id: 4,
+            name: "Rigging para Videojuegos",
+            url: "https://libel.academy/master-rigging/",
+        },
+    ],
+};
+
+const schoolsDetails = {
+    title: "Escuelas",
+    content: [
+        {
+            id: 0,
+            name: "Escuela ZBrush",
+            url: "https://cursos.libel.academy/bundles/membresia-plus-escuela-zbrush",
+        },
+        {
+            id: 1,
+            name: "Escuela Blender",
+            url: "https://aprende-blender.libel.academy/",
+        },
+        {
+            id: 2,
+            name: "Escuela Rigging",
+            url: "https://cursos.libel.academy/collections?q=Rigging",
+        },
+        {
+            id: 3,
+            name: "Escuela Ilustración",
+            url: "https://cursos.libel.academy/collections?q=concep",
+        },
+    ],
+};
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const sideMenu = useSelector((state) => state.sideMenu.value.menu);
+
     const [menu, setMenu] = useState(false);
-    const [showMenu, setShowMenu] = useState("none");
+
+    const [itemDetail, setItemDetail] = useState(coursesDetail);
+    const [shortcutsDetail, setShortcutsDetail] = useState(false);
+
     const [courses, setCourses] = useState(false);
     const [coursesMenu, setCoursesMenu] = useState({
         visibility: "hidden",
@@ -40,17 +140,17 @@ const Navbar = () => {
     const [top, setTop] = useState("-100%");
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
-    // const countdownTimestampMs = 1644696000000;
-    const countdownTimestampMs = "Sat, 28 Mar 2022 22:00:00 GMT-5";
-
+    const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
 
     useEffect(() => {
         if (menu) {
-            setShowMenu("flex");
+            // setShowMenu("flex");
+            dispatch(showSideMenu());
         } else {
-            setShowMenu("none");
+            // setShowMenu("none");
+            dispatch(closeSideMenu());
         }
-    }, [menu]);
+    }, [menu, dispatch]);
 
     useEffect(() => {
         if (courses) {
@@ -82,7 +182,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="Navbar">
+        <div className="Navbar">
             <div className="navbar-container container">
                 <div className="home">
                     <a className="logo" href="https://libel.academy">
@@ -98,8 +198,9 @@ const Navbar = () => {
                             <img src={lo3dCamp} alt="3D Camp" />
                         </a>
                         <div className="nav-countdown-title">
-                            <a href="https://libel.academy/master-blender">
-                                MÁSTER EN <br /> BLENDER
+                            3D CAMP <br />{" "}
+                            <a href="https://libel.academy/3d-camp">
+                                ONLINE - EN VIVO
                             </a>
                         </div>
                         <div className="nav-countdown-timer">
@@ -183,11 +284,25 @@ const Navbar = () => {
                         />
                     </div>
                 </div>
-                <ul className="menu-list" style={{ display: `${showMenu}` }}>
-                    <div className="menu-countdown">
+                <ul
+                    className="menu-list"
+                    style={
+                        sideMenu
+                            ? {
+                                  transform: "translateX(0)",
+                                  visibility: "visible",
+                                  opacity: 1,
+                              }
+                            : {
+                                  transform: "translateX(100%)",
+                                  visibility: "hidden",
+                                  opacity: 1,
+                              }
+                    }
+                >
+                    <li className="menu-countdown">
                         <div className="menu-countdown-image">
                             <img src={lo3dCamp} alt="3D Camp" />
-                            <a href="https://libel.academy/master-blender" style={{color:"white"}}>MASTER EN BLENDER</a>
                         </div>
                         <div className="menu-countdown-timer">
                             <div className="menu-countdown-segment">
@@ -223,58 +338,105 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="menu-academy">
+                    </li>
+
+                    <li className="menu-shortcuts">
+                        <span
+                            className="menu-shortcuts-item"
+                            onClick={() => {
+                                setItemDetail(coursesDetail);
+                                setShortcutsDetail(true);
+                            }}
+                        >
+                            Cursos <IoChevronForward />
+                        </span>
+                        <span
+                            className="menu-shortcuts-item"
+                            onClick={() => {
+                                setItemDetail(mastersDetails);
+                                setShortcutsDetail(true);
+                            }}
+                        >
+                            Masters <IoChevronForward />
+                        </span>
+                        <span
+                            className="menu-shortcuts-item"
+                            onClick={() => {
+                                setItemDetail(schoolsDetails);
+                                setShortcutsDetail(true);
+                            }}
+                        >
+                            Escuelas <IoChevronForward />
+                        </span>
+                        <a
+                            href="https://libel.academy/3d-camp"
+                            className="menu-shortcuts-item"
+                        >
+                            3D Camp
+                        </a>
+                        <a
+                            href="https://cursos.libel.academy/collections?category=courses"
+                            className="menu-shortcuts-item"
+                        >
+                            Aprende a tu ritmo
+                        </a>
+                        <a
+                            href="https://cursos.libel.academy/collections?category=membresias"
+                            className="menu-shortcuts-item"
+                        >
+                            Membresías
+                        </a>
+                        <a
+                            href="https://libel.academy/zbrush/"
+                            className="menu-shortcuts-item"
+                        >
+                            Licencias
+                        </a>
+                        <div
+                            className="menu-shortcut-detail"
+                            style={
+                                shortcutsDetail
+                                    ? {
+                                          transform: "translateX(0)",
+                                          visibility: "visible",
+                                      }
+                                    : {
+                                          transform: "translateX(100%)",
+                                          visibility: "hidden",
+                                      }
+                            }
+                        >
+                            <span
+                                onClick={() => {
+                                    setShortcutsDetail(false);
+                                }}
+                            >
+                                {itemDetail.title} <IoArrowBack />
+                            </span>
+                            <div className="menu-shortcut-detail-items">
+                                {itemDetail.content.map(({ id, name, url }) => (
+                                    <a key={id} href={url}>
+                                        {name}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="menu-academy">
                         <a
                             href="https://cursos.libel.academy/users/sign_up"
-                            className="register-mobile"
+                            className="menu-sign-up"
                         >
-                            Crear cuenta
+                            Crear Cuenta
                         </a>
                         <a
                             href="https://cursos.libel.academy/users/sign_in"
-                            className="login-mobile"
+                            className="menu-log-in"
                         >
                             Entrar
                         </a>
-                    </div>
-                    <div className="menu-shortcuts">
-                        <li>
-                            <a href="https://cursos.libel.academy/collections?category=courses">
-                                Cursos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://libel.academy/master/">
-                                Masters
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://cursos.libel.academy/bundles/membresia-plus-escuela-zbrush">
-                                Escuela Zbrush
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://aprende-blender.libel.academy/">
-                                Escuela Blender
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://cursos.libel.academy/collections?q=Rigging">
-                                Escuela Rigging
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://cursos.libel.academy/collections?q=concep">
-                                Escuela Ilustración
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://libel.academy/zbrush/">
-                                Licencias
-                            </a>
-                        </li>
-                    </div>
+                    </li>
                 </ul>
             </div>
             <div
@@ -424,11 +586,13 @@ const Navbar = () => {
                     <div className="courses-preview">
                         {courses ? (
                             <SlideShow courses={coursesPreviewList} />
-                        ) : null}
+                        ) : (
+                            <></>
+                        )}
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
     );
 };
 

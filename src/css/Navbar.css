@@ -38,12 +38,11 @@
 }
 .navigation {
     grid-area: navigation;
-    display: grid; 
-  grid-template-columns: 1.3fr 0.7fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "nav-countdown shortcuts"; 
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "nav-countdown shortcuts";
     grid-area: navigation;
 }
 
@@ -68,7 +67,7 @@
 }
 
 .nav-countdown-title {
-        font-weight: 700;
+    font-weight: 700;
     line-height: 1.09;
     text-align: center;
 }
@@ -265,16 +264,14 @@
     }
 
     .navigation {
-    grid-area: navigation;
-    display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "shortcuts"; 
-    grid-area: navigation;
-}
-
+        grid-area: navigation;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas: "shortcuts";
+        grid-area: navigation;
+    }
 
     .nav-countdown {
         display: none;
@@ -334,25 +331,27 @@
     .menu-list {
         width: 400px;
         height: calc(100vh - 80px);
-        position: fixed;
+        position: absolute;
         top: 80px;
         right: 0;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        /* justify-content: space-evenly; */
-        -webkit-backdrop-filter: blur(30px);
-        backdrop-filter: blur(30px);
-        background-color: var(--base-3);
-        padding: 20px;
+        justify-content: space-between;
+        -webkit-backdrop-filter: blur(28.7px);
+        backdrop-filter: blur(28.7px);
+        background-color: rgba(0, 0, 0, 1);
+        transition: all 0.5s ease-in;
     }
 
     .menu-countdown {
-        width: 100%;
+        width: 90%;
         height: 120px;
         border-radius: 10px;
+        margin: 20px;
         background-color: var(--base-1);
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-        padding: 20px;
+        box-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+        padding: 10px;
         display: flex;
         color: white;
     }
@@ -361,19 +360,8 @@
         width: 50%;
         height: 100%;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    .menu-countdown-image img {
-        width: 50%;
-    }
-
-    .menu-countdown-image a {
-        text-decoration: underline;  
-        text-align: center;
-        font-size: 14px;
     }
 
     .menu-countdown-timer {
@@ -398,69 +386,89 @@
         font-size: 18px;
     }
 
+    .menu-shortcuts {
+        width: 100%;
+        height: 45%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        /* background-color: var(--base-3); */
+        padding: 0px 25px;
+
+    }
+
+    .menu-shortcuts-item {
+        width: 100%;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-shortcut-detail { 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        transition: all 0.3s ease-in;
+        padding: 0px 25px;
+    }
+
+    .menu-shortcut-detail span {
+        width: 100%;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 10px;
+    }
+
+    .menu-shortcut-detail-items {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .menu-shortcut-detail-items a {
+        margin-bottom: 5px;
+    }
+
     .menu-academy {
         width: 100%;
         height: 100px;
-        border-top: 1px solid;
-        border-bottom: 1px solid;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin: 20px 0px;
-    }
-
-    .menu-academy a {
-        background-color: white;
-        color: black;
-        border-radius: 10px;
-        width: 130px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-    }
-
-    .menu-shortcuts {
-        width: 100%;
-        height: 400px;
+        margin: 20px;
+        padding: 0px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
     }
 
-    .menu-shortcuts li {
-        list-style: none;
+    .menu-academy a {
+        color: white;
         width: 100%;
-        height: 40px;
-        border-radius: 10px;
-        background-color: white;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        height: 45px;
+        border-radius: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 18px;
     }
 
-    .menu-shortcuts a {
-        color: #000000;
-        text-transform: uppercase;
-        letter-spacing: 4px;
+    .menu-sign-up {
+        background-color: var(--primary-blue);
     }
 
-    .menu-list-close {
-        width: 48px;
-        height: 48px;
-        border: none;
-        border-radius: 24px;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 20px;
-        left: calc(50% - 24px);
+    .menu-log-in {
+        background-color: black;
+        border: 0.5px solid white;
     }
 }
 
@@ -503,33 +511,19 @@
 }
 
 @media (max-width: 320px) {
-    .menu-academy a {
-        background-color: white;
-        color: black;
-        border-radius: 10px;
-        width: 130px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 4px rgb(0 0 0 / 60%);
+    .menu-shortcuts-item {
+        font-size: 18px;
+        margin: 0;
     }
 
-    .menu-countdown-image a {
-        text-decoration: underline;  
-        text-align: center;
-        font-size: 10px;
-    }
-
-    .menu-shortcuts li {
-        list-style: none;
+        .menu-academy a {
+        color: white;
         width: 100%;
-        height: 30px;
-        border-radius: 10px;
-        background-color: white;
-        box-shadow: 0 0 4px rgb(0 0 0 / 60%);
+        height: 40px;
+        border-radius: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 18px;
     }
 }

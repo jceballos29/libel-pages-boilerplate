@@ -13,28 +13,28 @@ const teachers = [
         image: image1,
         avatar: oscar,
         name: "Oscar Fernandez",
-        course: "personaje en zbrush",
+        course: "Personaje en ZBrush",
     },
     {
         position: 1,
         image: image2,
         avatar: ricardo,
         name: "Ricardo Diaz",
-        course: "personaje en blender",
+        course: "Personaje en Blender",
     },
     {
         position: 2,
         image: image,
         avatar: richard,
         name: "Fernando Saltos",
-        course: "rig. de personaje en maya",
+        course: "Rigging en Maya",
     },
     {
         position: 3,
         image: image3,
         avatar: ricardo,
         name: "María Moreno",
-        course: "Personaje en Maya + Substance Painter",
+        course: "Personaje en Maya + Substance",
     },
 ];
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 
-import { IoCaretDown, IoCaretUp, IoClose, IoMenu } from "react-icons/io5";
+import { IoCaretDown, IoCaretUp, IoMenu } from "react-icons/io5";
 
 import logo from "../images/logo.png";
-import lo3dCamp from "../images/3d-camp-logo.png"
+import lo3dCamp from "../images/blender.png"
 
 import bulletPoint1 from "../images/courses-list/002-gantt chart.png";
 import bulletPoint2 from "../images/courses-list/021-mail.png";
@@ -41,7 +41,7 @@ const Navbar = () => {
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
     // const countdownTimestampMs = 1644696000000;
-    const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
+    const countdownTimestampMs = "Sat, 28 Mar 2022 22:00:00 GMT-5";
 
 
     useEffect(() => {
@@ -82,7 +82,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="Navbar">
+        <nav className="Navbar">
             <div className="navbar-container container">
                 <div className="home">
                     <a className="logo" href="https://libel.academy">
@@ -98,9 +98,8 @@ const Navbar = () => {
                             <img src={lo3dCamp} alt="3D Camp" />
                         </a>
                         <div className="nav-countdown-title">
-                            3D CAMP <br />{" "}
-                            <a href="https://libel.academy/3d-camp">
-                                ONLINE - EN VIVO
+                            <a href="https://libel.academy/master-blender">
+                                MÁSTER EN <br /> BLENDER
                             </a>
                         </div>
                         <div className="nav-countdown-timer">
@@ -188,6 +187,7 @@ const Navbar = () => {
                     <div className="menu-countdown">
                         <div className="menu-countdown-image">
                             <img src={lo3dCamp} alt="3D Camp" />
+                            <a href="https://libel.academy/master-blender" style={{color:"white"}}>MASTER EN BLENDER</a>
                         </div>
                         <div className="menu-countdown-timer">
                             <div className="menu-countdown-segment">
@@ -245,7 +245,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="https://libel.academy/libel/master/">
+                            <a href="https://libel.academy/master/">
                                 Masters
                             </a>
                         </li>
@@ -275,14 +275,6 @@ const Navbar = () => {
                             </a>
                         </li>
                     </div>
-                    <button
-                        className="menu-list-close"
-                        onClick={() => {
-                            setMenu(!menu);
-                        }}
-                    >
-                        <IoClose />
-                    </button>
                 </ul>
             </div>
             <div
@@ -367,7 +359,7 @@ const Navbar = () => {
                                             alt="bullet point"
                                         />
                                     </div>
-                                    <a href="https://libel.academy/libel/master/">
+                                    <a href="https://libel.academy/master/">
                                         Masters
                                     </a>
                                 </li>
@@ -436,7 +428,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 

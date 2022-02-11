@@ -45,6 +45,7 @@
     }
     .learn-container h1 {
         font-size: 48px;
+        margin-bottom: 0px;
     }
 
     .learn-content {
@@ -53,8 +54,15 @@
     }
 }
 
+
+@media (max-width:460px) {
+        .learn-container h1 {
+        font-size: 34px;
+    }
+}
+
 @media (max-width:320px) {
         .learn-container h1 {
-        font-size: 42px;
+        font-size:28px;
     }
 }

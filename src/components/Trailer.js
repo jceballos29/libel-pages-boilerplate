@@ -13,7 +13,7 @@ const Trailer = () => {
     const url = "https://www.youtube.com/watch?v=GqowtpD6aEQ";
 
     return (
-        <div
+        <section
             className="Trailer"
             style={{
                 backgroundImage: `linear-gradient(0deg, rgba(96,0,222,0.6) 100%, rgba(255,255,255,0) 100%), url(${trailerBackground})`,
@@ -27,7 +27,7 @@ const Trailer = () => {
                     <h1 className="trailer-title">VER TRAILER</h1>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

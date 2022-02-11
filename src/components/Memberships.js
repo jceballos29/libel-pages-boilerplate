@@ -24,6 +24,7 @@ const Memberships = () => {
             price_before={training.price_before}
             options={training.options}
             items={training.items}
+            saving={training.saving}
         />
     ));
 
@@ -56,7 +57,7 @@ const Memberships = () => {
     ];
 
     return (
-        <div className="Memberships" id="entrenamientos">
+        <section className="Memberships" id="entrenamientos">
             <div className="memberships-container container padding">
                 <div className="memberships-header">
                     <h1>
@@ -69,7 +70,7 @@ const Memberships = () => {
                         />
                     </h1>
                     <p>
-                        En el 3DCAMP puedes elegir 1, 2 o 3 entrenamientos. Todo depende de tu plan de aprendizaje y el tiempo que puedas invertir en cada uno de los temas.
+                        En el 3DCAMP puedes elegir de 1 a 4 entrenamientos. Todo depende de tu plan de aprendizaje y el tiempo que puedas invertir en cada uno de los temas.
                     </p>
                 </div>
                 <div className="memberships-content">
@@ -100,7 +101,7 @@ const Memberships = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

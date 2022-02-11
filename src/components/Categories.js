@@ -6,7 +6,7 @@ import badge from "../images/badge.png"
 
 const Categories = () => {
     return (
-        <div className="Categories">
+        <section className="Categories" id="categories">
             <div className="categories-container container">
                 <h1>CATEGORÍAS</h1>
                 <p className="categories-legend">
@@ -44,7 +44,7 @@ const Categories = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

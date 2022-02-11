@@ -135,7 +135,7 @@
 
 @media (max-width: 460px) {
     .Counseling {
-        height: 550px;
+        height: 620px;
     }
     .decoration-left {
         display: none;
@@ -153,8 +153,9 @@
 
     .Counseling h1 {
         text-align: center;
-        line-height: 48px;
+        line-height: 1;
         margin-bottom: 30px;
+        
     }
 
     .counseling-content {

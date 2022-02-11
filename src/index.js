@@ -4,20 +4,25 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Video from "./components/modals/Video";
+import AdvisoryGlobal from "./components/modals/AdvisoryGlobal";
 
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import videoReducer from "./features/video";
-import awardReducer from "./features/award"
-import trainingReducer from "./features/training"
+import awardReducer from "./features/award";
+import trainingReducer from "./features/training";
 import Award from "./components/modals/Award";
 import Training from "./components/modals/Training";
+import advisoryReducer from "./features/advisory";
+import sideMenuReducer from "./features/menu";
 
 const store = configureStore({
     reducer: {
         video: videoReducer,
         award: awardReducer,
-        training: trainingReducer
+        training: trainingReducer,
+        advisory: advisoryReducer,
+        sideMenu: sideMenuReducer,
     },
 });
 
@@ -28,6 +33,7 @@ ReactDOM.render(
             <Video />
             <Award />
             <Training />
+            <AdvisoryGlobal />
         </Provider>
     </React.StrictMode>,
     document.getElementById("root")

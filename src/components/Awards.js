@@ -3,7 +3,7 @@ import "../css/Awards.css";
 
 import awardsBackground from "../images/award-background.png";
 
-import libel from "../images/logo_dot.png"
+import libel from "../images/logo_dot.png";
 import AwardsCard from "./cards/AwardsCard";
 
 const awards = [
@@ -39,8 +39,18 @@ const awards = [
 ];
 
 const Awards = () => {
+    const handleLink = (e) => {
+        e.preventDefault();
+        const target = e.target.getAttribute("href");
+        const location = document.querySelector(target).offsetTop;
+        window.scrollTo({
+            left: 0,
+            top: location - 80,
+        });
+    };
+
     return (
-        <div className="Awards">
+        <section className="Awards" id="awards">
             <div className="awards-container container padding">
                 <h1>PREMIOS</h1>
                 <div className="awards-content">
@@ -61,13 +71,17 @@ const Awards = () => {
                                 items={award.items}
                             />
                         ))}
-                        <a className="save-your-quote" href="/#">
-                            APARTA&nbsp;<span>TU CUPO</span>
+                        <a
+                            href="#entrenamientos"
+                            className="save-your-quote"
+                            onClick={handleLink}
+                        >
+                            ÚNETE&nbsp;<span>AHORA</span>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

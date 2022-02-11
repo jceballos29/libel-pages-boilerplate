@@ -6,7 +6,7 @@ import ItineraryCard from "./cards/ItineraryCard";
 
 const Itinerary = () => {
     return (
-        <div className="Itinerary">
+        <section className="Itinerary" id="itinerary">
             <div className="itinerary-container container padding">
                 <div className="itinerary-header">
                     <h1>
@@ -31,7 +31,7 @@ const Itinerary = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

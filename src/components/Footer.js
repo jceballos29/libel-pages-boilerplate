@@ -13,11 +13,19 @@ import youtube from "../images/social_networks/025-youtube.png";
 import telegram from "../images/social_networks/018-telegram.png";
 import DegradeButton from "./buttons/DegradeButton";
 
-import { Link } from "react-scroll";
-
 const Footer = () => {
+    const handleLink = (e) => {
+        e.preventDefault();
+        const target = e.target.getAttribute("href");
+        const location = document.querySelector(target).offsetTop;
+        window.scrollTo({
+            left: 0,
+            top: location - 80,
+        });
+    };
+
     return (
-        <div className="Footer">
+        <footer className="Footer">
             <div className="footer-content">
                 <div className="footer-content-container container">
                     <div className="footer-shortcuts">
@@ -57,17 +65,11 @@ const Footer = () => {
                                     Licencias
                                 </a>
                             </li>
-                            <Link
-                                to="results"
-                                hashSpy={true}
-                                spy={true}
-                                smooth={true}
-                                duration={700}
-                                offset={-80}
-                                className={"footer-list-li"}
-                            >
-                                Resultados
-                            </Link>
+                            <li>
+                                <a href="#results" onClick={handleLink}>
+                                    Resultados
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div className="footer-contact">
@@ -164,7 +166,7 @@ const Footer = () => {
                     <p className="copyright">&copy; Copyright 2022</p>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 };
 

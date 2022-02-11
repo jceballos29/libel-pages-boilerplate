@@ -1,0 +1,165 @@
+.Master {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.master-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.decoration-1 {
+    position: absolute;
+    left: -15%;
+    top: -20%;
+    width: 400px;
+}
+
+.decoration-2 {
+    position: absolute;
+    bottom: -15%;
+    right: -20%;
+    width: 400px;
+}
+
+.master-header {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.master-title {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1.09;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.master-title span {
+    color: var(--primary-blue);
+}
+
+.master-title span > b {
+    position: relative;
+}
+
+/* .master-title span > img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+} */
+
+.header-paragraph {
+    width: 50%;
+    font-size: 18px;
+    color: var(--base-3);
+    text-align: center;
+}
+
+.header-paragraph span {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.master-body {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* .Master .rec-item-wrapper {
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.master-previous {
+    position: absolute;
+    left: -60px;
+}
+
+.master-next {
+    position: absolute;
+    right: -60px;
+}
+
+
+@media (max-width: 1024px) {
+    .master-body {
+        width: 85%;
+    }
+
+    .master-previous,
+    .master-next {
+        display: none;
+    }
+
+    .decoration-1 {
+    position: absolute;
+    left: -27%;
+    top: -20%;
+    width: 400px;
+}
+
+.decoration-2 {
+    position: absolute;
+    bottom: -15%;
+    right: -20%;
+    width: 400px;
+}
+}
+
+@media (max-width: 860px) {
+    .master-body {
+        width: 100%;
+    }
+
+    .master-title {
+        font-size: 48px;
+    }
+
+    .decoration-1 {
+        display: none;
+    }
+
+    .decoration-2 {
+        display: none;
+    }
+}
+
+@media (max-width: 460px) {
+    .master-title {
+        font-size: 28px;
+    }
+
+    .header-paragraph {
+        width: 80%;
+    }
+}
+
+@media (max-width: 320px) {
+    .master-title {
+        font-size: 22px;
+    }
+}

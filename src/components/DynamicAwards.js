@@ -4,6 +4,13 @@ import "../css/DynamicAwards.css"
 import Carousel, { consts } from "react-elastic-carousel";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
+import {
+    MdVideoSettings,
+    MdOutlinePaid,
+    MdOutlineImportantDevices,
+    MdOutlineRecordVoiceOver,
+} from "react-icons/md";
+
 import line from "../images/underline.png";
 
 const DynamicAwards = () => {
@@ -37,7 +44,7 @@ const DynamicAwards = () => {
     ];
 
     return (
-        <div className="DynamicAwards">
+        <section className="DynamicAwards">
             <div className="dynamic-container container padding">
                 <div className="dynamic-header">
                     <h1>
@@ -55,43 +62,51 @@ const DynamicAwards = () => {
                     </p>
                 </div>
                 <div className="dynamic-body">
-                    {/* <img className="award-1" src={netflix} alt="Netflix" />
-                    <img
-                        className="award-2"
-                        src={primeVieo}
-                        alt="prime video"
-                    />
-                    <img className="award-3" src={hboMax} alt="HBO max" />
-                    <img className="award-4" src={disney} alt="Disney" /> */}
-                    <div className="award">Acceso a cursos en vídeo</div>
-                    <div className="award">Cupones de descuento</div>
-                    <div className="award">Membresía Black</div>
-                    <div className="award">Feedback en vivo privado</div>
+                    <p className="award">
+                        <MdVideoSettings className="award-icon" />
+                        <span>Acceso a </span>&nbsp;cursos en vídeo
+                    </p>
+                    <p className="award">
+                        <MdOutlinePaid className="award-icon" />
+                        <span>Cupones de</span>&nbsp;descuento
+                    </p>
+                    <p className="award">
+                        <MdOutlineImportantDevices className="award-icon" />
+                        <span>Membresía</span>&nbsp;Black
+                    </p>
+                    <p className="award">
+                        <MdOutlineRecordVoiceOver className="award-icon" />
+                        <span>Feedback en vivo</span>&nbsp;privado
+                    </p>
                 </div>
                 <div className="dynamic-body-mobile">
                     <Carousel
-                        // ref={carousel}
                         breakPoints={breakPoints}
                         pagination={false}
                         renderArrow={customArrows}
                         className="dynamic-carousel"
                     >
-                        {/* <img className="award" src={netflix} alt="Netflix" />
-                        <img
-                            className="award"
-                            src={primeVieo}
-                            alt="prime video"
-                        />
-                        <img className="award" src={hboMax} alt="HBO max" />
-                        <img className="award" src={disney} alt="Disney" /> */}
-                        <div className="award">Acceso a cursos en vídeo</div>
-                        <div className="award">Cupones de descuento</div>
-                        <div className="award">Membresía Black</div>
-                        <div className="award">Feedback en vivo privado</div>
+
+                        <p className="award">
+                            <MdVideoSettings className="award-icon" />
+                            <span>Acceso a </span>&nbsp;cursos en vídeo
+                        </p>
+                        <p className="award">
+                            <MdOutlinePaid className="award-icon" />
+                            <span>Cupones de</span>&nbsp;descuento
+                        </p>
+                        <p className="award">
+                            <MdOutlineImportantDevices className="award-icon" />
+                            <span>Membresía</span>&nbsp;Black
+                        </p>
+                        <p className="award">
+                            <MdOutlineRecordVoiceOver className="award-icon" />
+                            <span>Feedback en vivo</span>&nbsp;privado
+                        </p>
                     </Carousel>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

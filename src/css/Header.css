@@ -1,41 +1,54 @@
 .Header {
     width: 100%;
-    height: 800px;
+    height: 100vh;
     padding-top: 110px;
+    padding-bottom: 40px;
     background-color: var(--base-1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    background-image: url("../images/header-background.png");
+    /* background-image: url("../images/header-background.png"); */
     background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: bottom;
+    /* background-position-x: center;
+    background-position-y: bottom; */
+    background-position: center;
+    background-size: cover;
     position: relative;
     border-bottom: 1px solid var(--line);
+    overflow: hidden;
 }
 
-.header-content {
-    width: 100%;
-    height: calc(100% - 150px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.Header .DegradeButton {
+    margin: 0;
+    height: 40px;
+    border-radius: 20px;
 }
 
-.header-content h1 {
+.header-flame {
+    position: absolute;
+    bottom: -30%;
+}
+
+.logo-3d-camp {
+    position: relative;
+
+}
+
+.header-title {
     font-size: 72px;
-    font-weight: 500;
+    font-weight: 700;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.09;
     letter-spacing: -2px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
-.header-content h1 > span {
+.header-title b > span {
     background: linear-gradient(
         90deg,
         rgba(96, 0, 222, 1) 30%,
@@ -44,15 +57,29 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+
+.header-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%
 }
 
 .header-content-info {
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .header-content-info p {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -60,40 +87,70 @@
     letter-spacing: -1px;
     text-align: center;
     color: var(--white);
-    margin-right: 20px;
 }
+
+
+.header-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    position: relative;
+       row-gap: 30px;
+
+            /* -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    padding: 20px -0px; */
+}
+
 
 /* ############################################### */
+
 .header-information {
-    width: 100%;
-    height: 150px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-    background-color: rgba(0, 0, 0, 0.1);
-    margin: 0;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    z-index: 10;
+    /* padding: 10px; */
+
 }
 
-.header-information-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-information h2 {
+    /* margin-left: 10px; */
+    width: 300px;
+    text-align: center;
+    /* margin-right: 10px; */
+    font-weight: 300;
+    font-size: 20px;
+
 }
 
+.header-information h2 > span {
+    font-size: 16px;
+}
+
+/* ########################################3 */
 .countdown {
     width: 230px;
     height: 90px;
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     background-color: rgba(144, 144, 144, 0.2);
+    padding: 5px 10px;
+}
+
+.countdown-timer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .countdown-segment {
@@ -107,7 +164,7 @@
     font-size: 16px;
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .countdown-label {
@@ -124,38 +181,56 @@
 }
 
 .started-camp {
-    width: 230px;
     height: 90px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     position: relative;
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 500;
 }
 
+.started-camp p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* ###################### */
 .camp-schedule {
     width: 230px;
-    height:90px;
+    height: 90px;
     border-radius: 5px;
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     background-color: rgba(144, 144, 144, 0.2);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 5px 10px;
+    position: absolute;
+    right: 15%;
+    top: 10px;
+}
+
+
+.schedule-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .schedule-days {
-    height: 100%;
-    width: 72px;
-    border-right: 1px solid var(--line);
+    width: 45px;
+    height: 70px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -163,10 +238,13 @@
     letter-spacing: normal;
     text-align: left;
     color: var(--base-3);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .schedule-days span {
-    font-size: 29px;
+    font-size: 24px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -177,8 +255,9 @@
 }
 
 .schedule-legend {
-    width: 160px;
-    height: 100%;
+    width: 155px;
+    height: 70px;
+    border-radius: 5px;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
@@ -190,82 +269,60 @@
     color: var(--base-3);
     display: flex;
     align-items: center;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(0, 0, 0, 0.8);
     padding-left: 20px;
 }
 
-@media (max-width: 860px) {
-    .Header {
-        height: 800px;
-    background-position-y:50%;
-    }
-    .header-content {
-    width: 100%;
-    height: calc(100% - 250px); 
-}
-    .header-content h1 { 
-        font-size: 52px;
-    }
-    .header-information {
-        height: 250px;
-    }
+/* ###################### */
 
-    .header-information-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+
+@media (max-width: 860px) {
+
+    .Header {
+        height: auto;
     }
+   .header-info {
+       flex-direction: column;
+   }
+   .camp-schedule  {
+       position: relative;
+       top: auto;
+       right: auto;
+   }
+   .header-flame {
+    position: absolute;
+    bottom: 0;
+}
 }
 
 @media (max-width: 460px) {
-
-    .Header {
-    background-position-y: 100%;
-        
-    }
-
-    .header-content h1 {
-        font-size: 46px;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.1;
-        letter-spacing: -1.28px;
-        text-align: center;
-        color: var(--white);
-    }
-
+   
     .header-content-info {
         flex-direction: column;
-    }   
+        gap: 20px;
+    }
 
-    .header-content-info p{
-        margin-right: 0px;
+    .header-title {
+        font-size: 40px;
     }
 
     .header-information {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
-}
-
-@media (max-width:385px) {
-    .header-content h1 {
-            font-size: 42px;
+    .header-content-info {
+        margin-top: 20px;
     }
 }
 
-@media (max-width:320px) {
-        .header-content h1 {
-        font-size: 36px;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.1;
-        letter-spacing: -1.28px;
-        text-align: center;
-        color: var(--white);
+@media (max-width: 385px) {
+
+}
+
+@media (max-width: 320px) {
+    .header-title {
+        font-size: 40px;
     }
 }

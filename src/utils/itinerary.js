@@ -1,7 +1,6 @@
 
 import event1 from "../images/itinerary/descarga.png"
 import event2 from "../images/itinerary/Grupo 366.png"
-import event3 from "../images/itinerary/tres.png"
 import event4 from "../images/itinerary/4.png"
 import event5 from "../images/itinerary/5.png"
 
@@ -19,12 +18,12 @@ const itineraryEvents = [
         description:
             "Modela en el tiempo propuesto tu helado favorito, usando el software que prefieras.",
     },
-    {
-        image: event3,
-        event: "Revisión de Portafolio",
-        description:
-            "Estaremos revisando tu portafolio y dándote algunos tips para seguir mejorando.",
-    },
+    // {
+    //     image: event3,
+    //     event: "Revisión de Portafolio",
+    //     description:
+    //         "Estaremos revisando tu portafolio y dándote algunos tips para seguir mejorando.",
+    // },
     {
         image: event4,
         event: "Dinámicas y retos",

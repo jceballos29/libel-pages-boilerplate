@@ -352,7 +352,7 @@
         border-radius: 10px;
         background-color: var(--base-1);
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-        padding: 10px;
+        padding: 20px;
         display: flex;
         color: white;
     }
@@ -361,8 +361,19 @@
         width: 50%;
         height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .menu-countdown-image img {
+        width: 50%;
+    }
+
+    .menu-countdown-image a {
+        text-decoration: underline;  
+        text-align: center;
+        font-size: 14px;
     }
 
     .menu-countdown-timer {
@@ -488,5 +499,37 @@
 
     .logo img {
         width: 120px;
+    }
+}
+
+@media (max-width: 320px) {
+    .menu-academy a {
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        width: 130px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 4px rgb(0 0 0 / 60%);
+    }
+
+    .menu-countdown-image a {
+        text-decoration: underline;  
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .menu-shortcuts li {
+        list-style: none;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 0 4px rgb(0 0 0 / 60%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

@@ -17,27 +17,43 @@ const memberships = [
         options: [
             {
                 option: "Seleccionar 1",
-                url: "",
+                url: {
+                    paypal:null,
+                    card: null,
+                },
             },
             {
                 option: "ZBrush",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PMYR6HY8DLTJG",
+                    card: " https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=04d48aM7c37cR259",
+                },
             },
             {
                 option: "Blender",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NR6VESCBKJPVY",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=09b248M7c37cR25a",
+                },
             },
             {
                 option: "Rigging",
-                url: "/#",
+                url: {
+                    paypal: " https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9Z7W2A68AP4SA",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=0da0f6M7c37cR25b",
+                },
             },
             {
                 option: "Maya+Substance Painter",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VVL4WXR4MGSG4",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=03ab78M7c37cR25c",
+                },
             },
         ],
-        price: "34.9",
+        price: "36",
         price_before: "100",
+        saving: null,
         items: [
             {
                 item: "1 Entrenamiento",
@@ -62,35 +78,57 @@ const memberships = [
         options: [
             {
                 option: "Seleccionar 2",
-                url: "",
+                url: {
+                    paypal: null,
+                    card: null,
+                },
             },
             {
                 option: "Blender & ZBrush",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XJWX84TE4RJKE",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=04df11M7c37cR25d",
+                },
             },
             {
                 option: "Blender & Rigging",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UNYWGER3JM8FY",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=025103M7c37cR25e",
+                },
             },
             {
                 option: "Blender & Maya+Substance   ",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCW4XTFRU5H4S",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=0d7ec4M7c37cR25f",
+                },
             },
             {
                 option: "ZBrush & Rigging ",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TH2NJBS9T3HT6",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=0a30a1M7c37cR260",
+                },
             },
             {
                 option: "ZBrush & Maya+Substance",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NLX9CYCVTCBWJ",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=0c4f48M7c37cR261",
+                },
             },
             {
                 option: "Rigging & Maya+Substance",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D3W7GW3RD4TCQ",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=08a744M7c37cR262",
+                },
             },
         ],
-        price: "49.9",
+        price: "56",
         price_before: "100",
+        saving: "16.99",
         items: [
             {
                 item: "2 Entrenamientos",
@@ -115,27 +153,43 @@ const memberships = [
         options: [
             {
                 option: "Seleccionar 3",
-                url: "",
+                url: {
+                    paypal: null,
+                    card: null,
+                },
             },
             {
                 option: "Blender, ZBrush & Rigging",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3FE9VFAJABVYG",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=07a867M7c37cR263",
+                },
             },
             {
                 option: "Blender, ZBrush & Maya+Substance",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XCU5834G25PJ2",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=088aa3M7c37cR264",
+                },
             },
             {
                 option: "Blender, Rigging & Maya+Substance",
-                url: "/#",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NCMC7N49CRJB8",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=0779f5M7c37cR265",
+                },
             },
             {
-                option: "ZBrush & Rigging & Maya+Substance",
-                url: "/#",
+                option: "ZBrush, Rigging & Maya+Substance",
+                url: {
+                    paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WDVS23YQ9MAA4",
+                    card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=062f79M7c37cR266",
+                },
             },
         ],
-        price: "59.9",
+        price: "76",
         price_before: "100",
+        saving: "33.98",
         items: [
             {
                 item: "3 Entrenamientos",
@@ -157,9 +211,18 @@ const memberships = [
         image: image4,
         icon: diamond,
         title: "Full Plan",
-        options: [],
-        price: "69.9",
+        options: [
+            // {
+            //     option: "Todos disponibles",
+            //     url: {
+            //         paypal: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KTT77XMQ9PAYU",
+            //         card: "https://checkout.payulatam.com/ppp-web-gateway-payu//pr?dlink=095a6eM7c37cR267",
+            //     },
+            // },
+        ],
+        price: "96",
         price_before: "100",
+        saving: "50.97",
         items: [
             {
                 item: "Todos los entrenamientos.",

@@ -6,17 +6,15 @@ import Question from "./cards/Question";
 
 import image from "../images/faq-image.png";
 import line from "../images/line.png";
-import { IoChevronForward } from "react-icons/io5";
 
 const FAQ = () => {
-
     const [question, setQuestion] = useState();
     const handleQuestion = (id) => {
-        setQuestion(id)
-    }
+        setQuestion(id);
+    };
 
     return (
-        <div className="FAQ">
+        <section className="FAQ" id="faq">
             <div className="faq-container container">
                 <div className="faq-title">
                     <h1>
@@ -75,14 +73,6 @@ const FAQ = () => {
                                     question === questions[9].id ? true : false
                                 }
                             />
-                            <a
-                                href={
-                                    "https://libel.academy/3d-camp/preguntas-frecuentes"
-                                }
-                                className="more-questions"
-                            >
-                                VER MAS PREGUNTAS <IoChevronForward />
-                            </a>
                         </div>
                         <a
                             href="https://calendly.com/libel"
@@ -95,7 +85,7 @@ const FAQ = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

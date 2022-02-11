@@ -17,7 +17,7 @@
 
 .training-container {
     width: 400px;
-    background-color: var(--base-3);
+    background-color: white;
     border-radius: 20px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
     transform: translateY(0%) scale(1);

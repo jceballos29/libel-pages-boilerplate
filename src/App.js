@@ -1,5 +1,4 @@
 import './App.css';
-import WhatWillYouLearn from './components/ WhatWillYouLearn';
 import Awards from './components/Awards';
 import Categories from './components/Categories';
 import Counseling from './components/Counseling';
@@ -13,28 +12,29 @@ import Itinerary from './components/Itinerary';
 import Memberships from './components/Memberships';
 import Navbar from './components/Navbar';
 import Trailer from './components/Trailer';
-import TrainingsToDo from './components/TrainingsToDo';
+import Master from "./components/Master"
+import FloatingSidebar from './components/FloatingSidebar';
 
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Navbar />
+      <FloatingSidebar />
       <Header />
-      <TrainingsToDo />
       <Trailer />
+      <Master />
+      <Memberships />
+      <Financing />
+      <Itinerary />
       <Categories />
       <Awards />
       <DynamicAwards />
-      <Itinerary />
-      <WhatWillYouLearn />
-      <Memberships />
-      <Financing />
-      <FeaturedResults />
       <Counseling />
+      <FeaturedResults />
       <FAQ />
       <Footer />
-    </div>
+    </main>
   );
 }
 

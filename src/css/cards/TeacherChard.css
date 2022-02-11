@@ -7,7 +7,7 @@
     grid-template-areas:
         "teacher-image"
         "teacher-content";
-    width: 250px;
+    width: 240px;
     height: 220px;
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
@@ -65,7 +65,6 @@
 
 .teacher-title {
     grid-area: teacher-title;
-    text-transform: capitalize;
     text-align: center;
     line-height: 1.09;
     align-self: center;
@@ -73,31 +72,17 @@
 }
 
 .teacher-info {
-    display: grid;
-    grid-template-columns: 0.5fr 1.5fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "teacher-avatar teacher-name";
-    grid-area: teacher-info;
-    padding-left: 10px;
-
-}
-
-.teacher-avatar {
-    grid-area: teacher-avatar;
-    justify-self: center;
-    align-self: start;
-}
-
-.teacher-name {
-    grid-area: teacher-name;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     line-height: 1.05;
+    color: #c2d7ff;
     font-weight: 400;
-        color: #c2d7ff;
+
 }
 
-.teacher-name span {
+.teacher-info span {
     color: var(--base-3);
     font-weight: normal;
 }

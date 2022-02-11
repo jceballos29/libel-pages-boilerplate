@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "../css/Header.css";
 
-import DegradeButton from "./buttons/DegradeButton";
-
-import logo3dCamp from "../images/3d-camp-logo.png";
+import logo3dCamp from "../images/3d-camp-logo-header.png";
 import BulletPointBlink from "./buttons/BulletPointBlink";
+
+import line from "../images/underline.png";
+
+import imageBackground from "../images/fondo.jpg";
+import imageBackgroundWebp from "../images/fondo1.webp";
+
+import { isWebpSupported } from "react-image-webp/dist/utils";
 
 import dayjs from "dayjs";
 
 import { getRemainingTimeUntilMsTimestamp } from "../utils/countdown";
+import { IoChevronForward } from "react-icons/io5";
 
 const defaultRemainingTime = {
     seconds: "00",
@@ -20,10 +26,11 @@ const defaultRemainingTime = {
 const Header = () => {
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
     const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
+    // const countdownTimestampMs = "Fri, 28 Jan 2022 17:14:00 GMT-5";
 
     const nowDay = dayjs();
     const openingDay = dayjs("Sat, 19 Mar 2022 16:00:00 GMT-5");
-
+    // const openingDay = dayjs("Fri, 28 Jan 2022 17:14:00 GMT-5");
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -36,74 +43,133 @@ const Header = () => {
         setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
     }
 
+    const handleLink = (e) => {
+        e.preventDefault();
+        const target = e.target.getAttribute("href");
+        const location = document.querySelector(target).offsetTop;
+        window.scrollTo({
+            left: 0,
+            top: location - 80,
+        });
+    };
+
     return (
-        <div className="Header">
-            <div className="header-container container padding">
-                <div className="header-content">
-                    <img src={logo3dCamp} alt="3D CAMP" className="logo-3d-camp" />
-                    <h1>
-                        ÚNETE A<br />
-                        NUESTRO <span>CAMPAMENTO</span> 3D
-                    </h1>
-                    <div className="header-content-info">
-                        <p>online en vivo</p>
-                        <DegradeButton
-                            width={210}
-                            name="INSCRIBIRME"
-                            paddingLeft={40}
-                            link={true}
+        <section
+            className="Header"
+            id="home"
+            style={
+                isWebpSupported()
+                    ? {
+                          backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.6) 100%, rgba(255,255,255,0) 100%), url(${imageBackgroundWebp})`,
+                      }
+                    : {
+                          backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.4) 100%, rgba(255,255,255,0) 100%), url(${imageBackground}),
+                     `,
+                      }
+            }
+        >
+            <img src={logo3dCamp} alt="3D CAMP" className="logo-3d-camp" />
+            <h1 className="header-title">
+                Únete a nuestro
+                <br />
+                <b>
+                    <span>
+                        <img
+                            src={line}
+                            alt="header-underline"
+                            className="header-underline"
                         />
-                    </div>
-                </div>
+                        CAMPAMENTO
+                    </span>{" "}
+                    3D
+                </b>
+            </h1>
+            <div className="header-content-info">
+                <p>Online en vivo</p>
+                <a
+                    href="#entrenamientos"
+                    className="DegradeButton"
+                    onClick={handleLink}
+                >
+                    ÚNETE AHORA
+                    <span className="create-account">
+                        <IoChevronForward />
+                    </span>
+                </a>
             </div>
-            <div className="header-information">
-                <div className="header-information-container container padding">
-                    {!openingDay.isBefore(nowDay) ? (
-                        <div className="countdown">
-                                <div className="countdown-segment">
-                                    <div className="countdown-label">DIA</div>
-                                    <div className="countdown-number">
-                                        {remainingTime.days}
-                                    </div>
-                                </div>
-                                <div className="countdown-segment">
-                                    <div className="countdown-label">HOR</div>
-                                    <div className="countdown-number">
-                                        {remainingTime.hours}
-                                    </div>
-                                </div>
-                                <div className="countdown-segment">
-                                    <div className="countdown-label">MIN</div>
-                                    <div className="countdown-number">
-                                        {remainingTime.minutes}
-                                    </div>
-                                </div>
-                                <div className="countdown-segment">
-                                    <div className="countdown-label">SEG</div>
-                                    <div className="countdown-number">
-                                        {remainingTime.seconds}
-                                    </div>
+            {openingDay.isAfter(nowDay) ? (
+                <div className="header-info">
+                    <div className="camp-schedule">
+                        <div className="schedule-content">
+                            <div className="schedule-days">
+                                <span>45</span>DÍAS
+                            </div>
+                            <div className="schedule-legend">
+                                entrenamiento intensivo
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="header-information">
+                        <BulletPointBlink color={"#6000de"} />
+                        <h2>
+                            Inicia:
+                            <br />
+                            <b>19 de Marzo, 4:00 p.m</b>
+                            <br />
+                            <span>Hora Colombia</span>
+                        </h2>
+                        <BulletPointBlink color={"#6000de"} />
+                    </div>
+
+                    <div className="countdown">
+                        <div className="countdown-timer">
+                            <div className="countdown-segment">
+                                <div className="countdown-label">DIA</div>
+                                <div className="countdown-number">
+                                    {remainingTime.days}
                                 </div>
                             </div>
-                    ) : (
-                        <div className="started-camp">
-                            <BulletPointBlink color={"#77bf41"} />
-                            Ya inició
-                        </div>
-                    )}
-
-                    {/*  */}
-                    <div className="camp-schedule">
-                        <div className="schedule-days">
-                            <span>45</span>DÍAS
-                        </div>
-                        <div className="schedule-legend">
-                            entrenamiento intensivo
+                            <div className="countdown-segment">
+                                <div className="countdown-label">HOR</div>
+                                <div className="countdown-number">
+                                    {remainingTime.hours}
+                                </div>
+                            </div>
+                            <div className="countdown-segment">
+                                <div className="countdown-label">MIN</div>
+                                <div className="countdown-number">
+                                    {remainingTime.minutes}
+                                </div>
+                            </div>
+                            <div className="countdown-segment">
+                                <div className="countdown-label">SEG</div>
+                                <div className="countdown-number">
+                                    {remainingTime.seconds}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            ) : (
+                <div className="header-info">
+                    <div className="started-camp">
+                        <BulletPointBlink color={"#77bf41"} />
+                        <p>Ya inició</p>
+                    </div>
+                    <div className="camp-schedule">
+                        <div className="schedule-content">
+                            <div className="schedule-days">
+                                <span>45</span>DÍAS
+                            </div>
+                            <div className="schedule-legend">
+                                entrenamiento intensivo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </section>
     );
 };
 

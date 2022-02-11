@@ -54,7 +54,7 @@ const FeaturedResults = () => {
     ];
 
     return (
-        <div className="FeaturedResults" id="results">
+        <section className="FeaturedResults" id="results">
             <div className="results-container container padding">
                 <div className="results-header">
                     <div className="results-title">
@@ -98,7 +98,7 @@ const FeaturedResults = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

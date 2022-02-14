@@ -11,7 +11,7 @@ import Header from './components/Header';
 import Itinerary from './components/Itinerary';
 import Memberships from './components/Memberships';
 import Navbar from './components/Navbar';
-import Trailer from './components/Trailer';
+// import Trailer from './components/Trailer';
 import Master from "./components/Master"
 import FloatingSidebar from './components/FloatingSidebar';
 
@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <FloatingSidebar />
       <Header />
-      <Trailer />
+      {/* <Trailer /> */}
       <Master />
       <Memberships />
       <Financing />

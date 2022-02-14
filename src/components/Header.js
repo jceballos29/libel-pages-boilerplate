@@ -6,8 +6,8 @@ import BulletPointBlink from "./buttons/BulletPointBlink";
 
 import line from "../images/underline.png";
 
-import imageBackground from "../images/fondo.jpg";
-import imageBackgroundWebp from "../images/fondo1.webp";
+import imageBackground from "../images/background_header.jpg";
+import imageBackgroundWebp from "../images/background_header.webp";
 
 import { isWebpSupported } from "react-image-webp/dist/utils";
 

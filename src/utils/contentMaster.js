@@ -24,17 +24,17 @@ const contentMaster = [
         description:
             "Creemos juntos este grandioso personaje en ZBrush, asume el reto y demuestra que puedes lograrlo.",
         tech: ZBrush,
-        video: "https://www.youtube.com/watch?v=1-AWvUlYT6c",
+        video: "https://youtu.be/1-AWvUlYT6c",
     },
     {
         id: "02",
-        title: "Friendship",
+        title: "The Fisher",
         image: image02,
         imageWebp: imageWebp02,
         description:
             "Vive una experiencia con la última versión de Blender y libera el gran talento que hay en ti.",
         tech: blender,
-        video: "",
+        video: "https://www.youtube.com/watch?v=6T2lh60kE5U",
     },
     {
         id: "03",
@@ -44,7 +44,7 @@ const contentMaster = [
         description:
             "Aprende a crear personajes en Maya desde cero renderízalo en Arnold, aplica texturas en substance y más.",
         tech: maya,
-        video: "",
+        video: "https://youtu.be/SvQ6coGR-OE",
     },
     {
         id: "04",
@@ -54,7 +54,7 @@ const contentMaster = [
         description:
             "Crea este fantástico Rig desde cero en Maya y llevémoslo juntos a Unreal.",
         tech: maya,
-        video: "",
+        video: "https://youtu.be/KiEUJxCWLB4",
     },
 ];
 

@@ -1,6 +1,6 @@
 .AdvisoryGlobal {
     position: fixed;
-    z-index: 10000;
+    z-index: 1000;
     bottom: 0;
     right: calc(50% - 350px);
     width: 700px;
@@ -63,31 +63,50 @@
 
 @media (max-width:460px) {
     .AdvisoryGlobal {
-        width: 90%;
-    right: calc(50% - 45%);
-        flex-direction: column;
+        width: 100%;
+    right: 0;
+        flex-direction: row;
         text-align: center;
-    }
-
-    .AdvisoryGlobal h1 { 
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-}
-
-
-@media (max-width:320px) {
-    .AdvisoryGlobal {
-        width: 90%;
-    right: calc(50% - 45%);
-        flex-direction: column;
-        text-align: center;
+        justify-content: center;
+        gap: 10px;
     }
 
     .AdvisoryGlobal h1 { 
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
+
+    .AdvisoryGlobal a {
+    width:130px;
+    height: 36px;
+    border-radius: 18px;
+    border: 2px solid var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in;
+    font-size: 12px !important;
+}
+
+.ag-icon{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.ag-closer { 
+    top: 5px;
+    right: 5px;
+}
+}
+
+
+@media (max-width:320px) {
+    .ag-closer { 
+    top: 0px;
+    right: 0px;
+}
 }
 
 

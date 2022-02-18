@@ -90,7 +90,6 @@ const FloatingSidebar = () => {
         e.preventDefault();
         const target = e.target.getAttribute("href");
         const location = document.querySelector(target).offsetTop;
-        console.log(location);
         window.scrollTo({
             left: 0,
             top: location - 80,
@@ -106,8 +105,6 @@ const FloatingSidebar = () => {
             setAppear({ opacity: 0 });
         }
     }, [expanded]);
-
-    console.log(sideMenu);
 
     return (
         <div

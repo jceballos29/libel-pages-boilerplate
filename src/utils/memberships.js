@@ -16,9 +16,9 @@ const memberships = [
         title: "1 Opción",
         options: [
             {
-                option: "Seleccionar 1",
+                option: "¿Qué curso deseas?",
                 url: {
-                    paypal:null,
+                    paypal: null,
                     card: null,
                 },
             },
@@ -77,7 +77,7 @@ const memberships = [
         title: "2 Opciones",
         options: [
             {
-                option: "Seleccionar 2",
+                option: "¿Qué cursos deseas?",
                 url: {
                     paypal: null,
                     card: null,
@@ -152,7 +152,7 @@ const memberships = [
         title: "3 Opciones",
         options: [
             {
-                option: "Seleccionar 3",
+                option: "¿Qué cursos deseas?",
                 url: {
                     paypal: null,
                     card: null,

@@ -15,6 +15,7 @@ import Award from "./components/modals/Award";
 import Training from "./components/modals/Training";
 import advisoryReducer from "./features/advisory";
 import sideMenuReducer from "./features/menu";
+import bannerReducer from "./features/banner"
 
 const store = configureStore({
     reducer: {
@@ -23,6 +24,7 @@ const store = configureStore({
         training: trainingReducer,
         advisory: advisoryReducer,
         sideMenu: sideMenuReducer,
+        banner: bannerReducer,
     },
 });
 

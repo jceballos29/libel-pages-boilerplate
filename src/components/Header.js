@@ -15,6 +15,7 @@ import dayjs from "dayjs";
 
 import { getRemainingTimeUntilMsTimestamp } from "../utils/countdown";
 import { IoChevronForward } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const defaultRemainingTime = {
     seconds: "00",
@@ -26,12 +27,26 @@ const defaultRemainingTime = {
 const Header = () => {
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
     const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
-    // const countdownTimestampMs = "Fri, 28 Jan 2022 17:14:00 GMT-5";
 
     const nowDay = dayjs();
     const openingDay = dayjs("Sat, 19 Mar 2022 16:00:00 GMT-5");
-    // const openingDay = dayjs("Fri, 28 Jan 2022 17:14:00 GMT-5");
 
+    const banner = useSelector(state => state.banner.value.banner)
+    const width = window.innerWidth <= 460 ? 150 : 100;
+
+    const background = isWebpSupported()
+        ? {
+              backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.6) 100%, rgba(255,255,255,0) 100%), url(${imageBackgroundWebp})`,
+          }
+        : {
+              backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.4) 100%, rgba(255,255,255,0) 100%), url(${imageBackground}),`,
+          };
+
+    const paddingTop = banner ? { paddingTop: width + 80} : {paddingTop: 80}; 
+
+    const style = { ...background, ...paddingTop }
+
+    
     useEffect(() => {
         const intervalId = setInterval(() => {
             updateRemainingTime(countdownTimestampMs);
@@ -57,16 +72,7 @@ const Header = () => {
         <section
             className="Header"
             id="home"
-            style={
-                isWebpSupported()
-                    ? {
-                          backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.6) 100%, rgba(255,255,255,0) 100%), url(${imageBackgroundWebp})`,
-                      }
-                    : {
-                          backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.4) 100%, rgba(255,255,255,0) 100%), url(${imageBackground}),
-                     `,
-                      }
-            }
+            style={style}
         >
             <img src={logo3dCamp} alt="3D CAMP" className="logo-3d-camp" />
             <h1 className="header-title">

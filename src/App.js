@@ -15,7 +15,6 @@ import Navbar from './components/Navbar';
 import Master from "./components/Master"
 import FloatingSidebar from './components/FloatingSidebar';
 
-
 function App() {
   return (
     <main className="App">

@@ -94,12 +94,19 @@
 }
 
 .membership-card-option select {
-    border: none;
+    border: none;    
     background-color: transparent;
     width: 100%;
     font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 16px;
     outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.membership-card-option select:hover {
+    background-color: #dcc2ff;
 }
 
 .membership-card-option option {

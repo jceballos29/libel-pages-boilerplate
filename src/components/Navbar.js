@@ -10,7 +10,6 @@ import {
 } from "react-icons/io5";
 
 import logo from "../images/logo.png";
-import lo3dCamp from "../images/3d-camp-logo.png";
 
 import bulletPoint1 from "../images/courses-list/002-gantt chart.png";
 import bulletPoint2 from "../images/courses-list/021-mail.png";
@@ -20,19 +19,14 @@ import bulletPoint5 from "../images/courses-list/063-heart.png";
 import bulletPoint6 from "../images/courses-list/078-internet.png";
 import bulletPoint7 from "../images/courses-list/093-idea.png";
 
+import darkGunman from "../images/dark_gunman_3d.png"
+
 import coursesPreviewList from "../utils/previewCourses";
 import SlideShow from "./sliders/SlideShow";
 
-import { getRemainingTimeUntilMsTimestamp } from "../utils/countdown";
 import { useDispatch, useSelector } from "react-redux";
 import { closeSideMenu, showSideMenu } from "../features/menu";
-
-const defaultRemainingTime = {
-    seconds: "00",
-    minutes: "00",
-    hours: "00",
-    days: "00",
-};
+import BannerTop from "./BannerTop";
 
 const coursesDetail = {
     title: "Cursos",
@@ -138,9 +132,7 @@ const Navbar = () => {
     });
     const [courseColor, setCourseColor] = useState("#ffffff");
     const [top, setTop] = useState("-100%");
-    const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
-    const countdownTimestampMs = "Sat, 19 Mar 2022 16:00:00 GMT-5";
 
     useEffect(() => {
         if (menu) {
@@ -170,19 +162,9 @@ const Navbar = () => {
         }
     };
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            updateRemainingTime(countdownTimestampMs);
-        }, 1000);
-        return () => clearInterval(intervalId);
-    }, [countdownTimestampMs]);
-
-    function updateRemainingTime(countdown) {
-        setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
-    }
-
     return (
         <div className="Navbar">
+            <BannerTop />
             <div className="navbar-container container">
                 <div className="home">
                     <a className="logo" href="https://libel.academy">
@@ -190,48 +172,13 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navigation">
-                    <div className="nav-countdown">
-                        <a
-                            href="https://libel.academy/3d-camp"
-                            className="nav-countdown-image"
-                        >
-                            <img src={lo3dCamp} alt="3D Camp" />
-                        </a>
-                        <div className="nav-countdown-title">
-                            3D CAMP <br />{" "}
-                            <a href="https://libel.academy/3d-camp">
-                                ONLINE - EN VIVO
-                            </a>
-                        </div>
-                        <div className="nav-countdown-timer">
-                            <div className="nav-countdown-segment">
-                                <div className="nav-countdown-letters">DIA</div>
-                                <div className="nav-countdown-numbers">
-                                    {remainingTime.days}
-                                </div>
-                            </div>
-                            <div className="nav-countdown-segment">
-                                <div className="nav-countdown-letters">HOR</div>
-                                <div className="nav-countdown-numbers">
-                                    {remainingTime.hours}
-                                </div>
-                            </div>
-                            <div className="nav-countdown-segment">
-                                <div className="nav-countdown-letters">MIN</div>
-                                <div className="nav-countdown-numbers">
-                                    {remainingTime.minutes}
-                                </div>
-                            </div>
-                            <div className="nav-countdown-segment">
-                                <div className="nav-countdown-letters">SEG</div>
-                                <div className="nav-countdown-numbers">
-                                    {remainingTime.seconds}
-                                </div>
-                            </div>
-                        </div>
+                    <div className="nav-information">
+                        <img src={darkGunman} alt="Dark Gunman" style={{ height: 70 }} />
+                        <h4 style={{textAlign: "center"}}>CURSO: <br />Aprende Blender</h4>
+                        <a href="https://libel.academy/curso-blender">Inicia Ahora</a>
                     </div>
                     <div className="shortcuts">
-                        <a href="https://libel.academy/zbrush/">Licencias</a>
+                        <a href="https://libel.academy/zbrush/" target={"_blank"} rel="noreferrer">Licencias</a>
 
                         <button
                             style={{ color: `${courseColor}` }}
@@ -302,41 +249,12 @@ const Navbar = () => {
                 >
                     <li className="menu-countdown">
                         <div className="menu-countdown-image">
-                            <img src={lo3dCamp} alt="3D Camp" />
+                            <img src={darkGunman} alt="3D Camp" />
                         </div>
                         <div className="menu-countdown-timer">
-                            <div className="menu-countdown-segment">
-                                <div className="menu-countdown-letters">
-                                    DIA
-                                </div>
-                                <div className="menu-countdown-numbers">
-                                    {remainingTime.days}
-                                </div>
-                            </div>
-                            <div className="menu-countdown-segment">
-                                <div className="menu-countdown-letters">
-                                    HOR
-                                </div>
-                                <div className="menu-countdown-numbers">
-                                    {remainingTime.hours}
-                                </div>
-                            </div>
-                            <div className="menu-countdown-segment">
-                                <div className="menu-countdown-letters">
-                                    MIN
-                                </div>
-                                <div className="menu-countdown-numbers">
-                                    {remainingTime.minutes}
-                                </div>
-                            </div>
-                            <div className="menu-countdown-segment">
-                                <div className="menu-countdown-letters">
-                                    SEG
-                                </div>
-                                <div className="menu-countdown-numbers">
-                                    {remainingTime.seconds}
-                                </div>
-                            </div>
+                            <h3>CURSO:</h3>
+                            <h4>Reto Blender</h4>
+                            <a href="https://libel.academy/curso-blender" >Inicia Ahora</a>
                         </div>
                     </li>
 
